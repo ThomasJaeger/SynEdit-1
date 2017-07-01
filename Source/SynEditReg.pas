@@ -64,6 +64,7 @@ uses
   SynEditOptionsDialog,
   SynHighlighterADSP21xx,
   SynHighlighterAsm,
+  SynHighlighterAsmMASM,
   SynHighlighterAWK,
   SynHighlighterBaan, 
   SynHighlighterBat,
@@ -172,7 +173,7 @@ begin
     //database
     TSynCACSyn, TSynCacheSyn, TSynFoxproSyn, TSynSQLSyn, TSynSDDSyn,
     //assembler
-    TSynADSP21xxSyn, TSynAsmSyn, TSynHC11Syn, TSynHP48Syn, TSynSTSyn,
+    TSynADSP21xxSyn, TSynAsmSyn, TSynHC11Syn, TSynHP48Syn, TSynSTSyn, TSynAsmMASMSyn,
     //data modeling
     TSynDmlSyn, TSynModelicaSyn, TSynSMLSyn,
     //data

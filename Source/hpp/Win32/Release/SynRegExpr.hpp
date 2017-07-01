@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynRegExpr.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynRegExpr.pas' rev: 25.00 (Windows)
 
 #ifndef SynregexprHPP
 #define SynregexprHPP
@@ -12,19 +12,16 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synregexpr
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TRegExpr;
-class DELPHICLASS ERegExpr;
 //-- type declarations -------------------------------------------------------
 typedef System::WideChar * PRegExprChar;
 
@@ -46,6 +43,7 @@ typedef int *PREBracesArg;
 
 typedef System::WideChar __fastcall (__closure *TRegExprInvertCaseFunction)(const System::WideChar Ch);
 
+class DELPHICLASS TRegExpr;
 typedef System::UnicodeString __fastcall (__closure *TRegExprReplaceFunction)(TRegExpr* ARegExpr);
 
 class PASCALIMPLEMENTATION TRegExpr : public System::TObject
@@ -164,6 +162,7 @@ public:
 };
 
 
+class DELPHICLASS ERegExpr;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION ERegExpr : public System::Sysutils::Exception
 {
@@ -174,17 +173,17 @@ public:
 	int CompilerErrorPos;
 public:
 	/* Exception.Create */ inline __fastcall ERegExpr(const System::UnicodeString Msg) : System::Sysutils::Exception(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall ERegExpr(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : System::Sysutils::Exception(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall ERegExpr(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : System::Sysutils::Exception(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall ERegExpr(NativeUInt Ident)/* overload */ : System::Sysutils::Exception(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall ERegExpr(System::PResStringRec ResStringRec)/* overload */ : System::Sysutils::Exception(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall ERegExpr(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall ERegExpr(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall ERegExpr(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall ERegExpr(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall ERegExpr(const System::UnicodeString Msg, int AHelpContext) : System::Sysutils::Exception(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall ERegExpr(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall ERegExpr(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ERegExpr(NativeUInt Ident, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ERegExpr(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ERegExpr(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ERegExpr(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ERegExpr(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ERegExpr(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~ERegExpr(void) { }
 	
 };

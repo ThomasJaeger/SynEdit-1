@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterTeX.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterTeX.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlightertexHPP
 #define SynhighlightertexHPP
@@ -12,23 +12,23 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlightertex
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynTeXSyn;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM TtkTokenKind : unsigned char { tkBrace, tkBracket, tkNull, tkSpace, tkText, tkComment, tkControlSequence, tkMathMode };
 
+class DELPHICLASS TSynTeXSyn;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynTeXSyn : public Synedithighlighter::TSynCustomHighlighter
 {
 	typedef Synedithighlighter::TSynCustomHighlighter inherited;
@@ -84,6 +84,7 @@ public:
 	
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Synhighlightertex */

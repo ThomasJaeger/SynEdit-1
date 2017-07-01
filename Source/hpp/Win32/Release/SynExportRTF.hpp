@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynExportRTF.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynExportRTF.pas' rev: 25.00 (Windows)
 
 #ifndef SynexportrtfHPP
 #define SynexportrtfHPP
@@ -12,24 +12,24 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <Winapi.RichEdit.hpp>
-#include <SynEditExport.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.UITypes.hpp>
-#include <SynEditHighlighter.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <Winapi.RichEdit.hpp>	// Pascal unit
+#include <SynEditExport.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synexportrtf
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynExporterRTF;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynExporterRTF;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynExporterRTF : public Syneditexport::TSynCustomExporter
 {
 	typedef Syneditexport::TSynCustomExporter inherited;
@@ -68,6 +68,7 @@ __published:
 	__property UseBackground;
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Synexportrtf */

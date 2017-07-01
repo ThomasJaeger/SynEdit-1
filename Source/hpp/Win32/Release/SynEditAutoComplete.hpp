@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditAutoComplete.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditAutoComplete.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditautocompleteHPP
 #define SyneditautocompleteHPP
@@ -12,23 +12,22 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Menus.hpp>
-#include <SynEdit.hpp>
-#include <SynEditKeyCmds.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Menus.hpp>	// Pascal unit
+#include <SynEdit.hpp>	// Pascal unit
+#include <SynEditKeyCmds.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditautocomplete
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TCustomSynAutoComplete;
-class DELPHICLASS TSynAutoComplete;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TCustomSynAutoComplete;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TCustomSynAutoComplete : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -75,7 +74,10 @@ public:
 	__property System::UnicodeString EndOfTokenChr = {read=fEOTokenChars, write=fEOTokenChars};
 };
 
+#pragma pack(pop)
 
+class DELPHICLASS TSynAutoComplete;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynAutoComplete : public TCustomSynAutoComplete
 {
 	typedef TCustomSynAutoComplete inherited;
@@ -91,6 +93,7 @@ public:
 	
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Syneditautocomplete */

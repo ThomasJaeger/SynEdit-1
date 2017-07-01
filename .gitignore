@@ -1,0 +1,6 @@
+*.dcu
+*.hpp
+*.~1~
+Source/hpp/Win32/Release/SynURIOpener.hpp
+Source/hpp/Win32/Release/SynUsp10.hpp
+*.local

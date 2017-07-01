@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditPrintMargins.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditPrintMargins.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditprintmarginsHPP
 #define SyneditprintmarginsHPP
@@ -12,22 +12,21 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditPrintTypes.hpp>
-#include <SynEditPrinterInfo.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditPrintTypes.hpp>	// Pascal unit
+#include <SynEditPrinterInfo.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditprintmargins
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynEditPrintMargins;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynEditPrintMargins;
 class PASCALIMPLEMENTATION TSynEditPrintMargins : public System::Classes::TPersistent
 {
 	typedef System::Classes::TPersistent inherited;

@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditStrConst.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditStrConst.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditstrconstHPP
 #define SyneditstrconstHPP
@@ -12,14 +12,13 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditstrconst
 {
-//-- forward type declarations -----------------------------------------------
 //-- type declarations -------------------------------------------------------
 //-- var, const, procedure ---------------------------------------------------
 #define SYNS_ComponentsPage L"SynEdit"
@@ -184,6 +183,7 @@ namespace Syneditstrconst
 #define SYNS_LangGeneral L"General"
 #define SYNS_LangPascal L"ObjectPascal"
 #define SYNS_LangX86Asm L"x86Assembly"
+#define SYNS_LangMASM L"x86MASMAssembly"
 #define SYNS_LangPython L"Python"
 #define SYNS_LangTclTk L"TclTk"
 #define SYNS_LangSQL L"SQL"
@@ -685,6 +685,8 @@ extern DELPHI_PACKAGE System::ResourceString _SYNS_FriendlyLangPascal;
 #define Syneditstrconst_SYNS_FriendlyLangPascal System::LoadResourceString(&Syneditstrconst::_SYNS_FriendlyLangPascal)
 extern DELPHI_PACKAGE System::ResourceString _SYNS_FriendlyLangX86Asm;
 #define Syneditstrconst_SYNS_FriendlyLangX86Asm System::LoadResourceString(&Syneditstrconst::_SYNS_FriendlyLangX86Asm)
+extern DELPHI_PACKAGE System::ResourceString _SYNS_FriendlyLangMASM;
+#define Syneditstrconst_SYNS_FriendlyLangMASM System::LoadResourceString(&Syneditstrconst::_SYNS_FriendlyLangMASM)
 extern DELPHI_PACKAGE System::ResourceString _SYNS_FriendlyLangPython;
 #define Syneditstrconst_SYNS_FriendlyLangPython System::LoadResourceString(&Syneditstrconst::_SYNS_FriendlyLangPython)
 extern DELPHI_PACKAGE System::ResourceString _SYNS_FriendlyLangTclTk;

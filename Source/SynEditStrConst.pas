@@ -217,6 +217,7 @@ const
   SYNS_LangGeneral              =  'General';
   SYNS_LangPascal               =  'ObjectPascal';
   SYNS_LangX86Asm               =  'x86Assembly';
+  SYNS_LangMASM                 =  'x86MASMAssembly';
   SYNS_LangPython               =  'Python';
   SYNS_LangTclTk                =  'TclTk';
   SYNS_LangSQL                  =  'SQL';
@@ -508,6 +509,7 @@ resourcestring
   SYNS_FriendlyLangGeneral              =  'General';
   SYNS_FriendlyLangPascal               =  'Object Pascal';
   SYNS_FriendlyLangX86Asm               =  'x86 Assembly';
+  SYNS_FriendlyLangMASM                 =  'x86 MASM Assembly';
   SYNS_FriendlyLangPython               =  'Python';
   SYNS_FriendlyLangTclTk                =  'Tcl/Tk';
   SYNS_FriendlyLangSQL                  =  'SQL';

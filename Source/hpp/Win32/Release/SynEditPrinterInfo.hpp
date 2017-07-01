@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditPrinterInfo.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditPrinterInfo.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditprinterinfoHPP
 #define SyneditprinterinfoHPP
@@ -12,18 +12,17 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Printers.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Printers.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditprinterinfo
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynEditPrinterInfo;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynEditPrinterInfo;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditPrinterInfo : public System::TObject
 {

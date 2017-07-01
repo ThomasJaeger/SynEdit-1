@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterUNIXShellScript.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterUNIXShellScript.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlighterunixshellscriptHPP
 #define SynhighlighterunixshellscriptHPP
@@ -12,26 +12,26 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynUnicode.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlighterunixshellscript
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynUNIXShellScriptSyn;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM TtkTokenKind : unsigned char { tkComment, tkIdentifier, tkKey, tkNull, tkNumber, tkSecondKey, tkSpace, tkString, tkSymbol, tkVariable, tkUnknown };
 
 enum DECLSPEC_DENUM TRangeState : unsigned char { rsUnknown };
 
+class DELPHICLASS TSynUNIXShellScriptSyn;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynUNIXShellScriptSyn : public Synedithighlighter::TSynCustomHighlighter
 {
 	typedef Synedithighlighter::TSynCustomHighlighter inherited;
@@ -99,6 +99,7 @@ __published:
 	__property Synedithighlighter::TSynHighlighterAttributes* VarAttri = {read=fVarAttri, write=fVarAttri};
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Synhighlighterunixshellscript */

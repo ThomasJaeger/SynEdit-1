@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynTextDrawer.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynTextDrawer.pas' rev: 25.00 (Windows)
 
 #ifndef SyntextdrawerHPP
 #define SyntextdrawerHPP
@@ -12,29 +12,21 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <SynUnicode.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <System.Math.hpp>
-#include <System.UITypes.hpp>
-#include <System.Types.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <System.Math.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
+#include <System.Types.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syntextdrawer
 {
-//-- forward type declarations -----------------------------------------------
-struct TheFontData;
-struct TheSharedFontsInfo;
-class DELPHICLASS TheFontsInfoManager;
-class DELPHICLASS EheFontStockException;
-class DELPHICLASS TheFontStock;
-class DELPHICLASS EheTextDrawerException;
-class DELPHICLASS TheTextDrawer;
 //-- type declarations -------------------------------------------------------
 typedef System::StaticArray<int, 536870911> TIntegerArray;
 
@@ -42,6 +34,7 @@ typedef TIntegerArray *PIntegerArray;
 
 typedef System::Int8 TheStockFontPatterns;
 
+struct TheFontData;
 typedef TheFontData *PheFontData;
 
 struct DECLSPEC_DRECORD TheFontData
@@ -58,6 +51,7 @@ typedef System::StaticArray<TheFontData, 16> TheFontsData;
 
 typedef TheFontsData *PheFontsData;
 
+struct TheSharedFontsInfo;
 typedef TheSharedFontsInfo *PheSharedFontsInfo;
 
 struct DECLSPEC_DRECORD TheSharedFontsInfo
@@ -72,6 +66,7 @@ public:
 };
 
 
+class DELPHICLASS TheFontsInfoManager;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TheFontsInfoManager : public System::TObject
 {
@@ -97,10 +92,11 @@ public:
 
 enum DECLSPEC_DENUM Syntextdrawer__2 : unsigned char { tooOpaque, tooClipped };
 
-typedef System::Set<Syntextdrawer__2, Syntextdrawer__2::tooOpaque, Syntextdrawer__2::tooClipped> TTextOutOptions;
+typedef System::Set<Syntextdrawer__2, Syntextdrawer__2::tooOpaque, Syntextdrawer__2::tooClipped>  TTextOutOptions;
 
 typedef void __fastcall (__closure *TheExtTextOutProc)(int X, int Y, TTextOutOptions fuOptions, const System::Types::TRect &ARect, const System::UnicodeString Text, int Length);
 
+class DELPHICLASS EheFontStockException;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION EheFontStockException : public System::Sysutils::Exception
 {
@@ -108,23 +104,24 @@ class PASCALIMPLEMENTATION EheFontStockException : public System::Sysutils::Exce
 	
 public:
 	/* Exception.Create */ inline __fastcall EheFontStockException(const System::UnicodeString Msg) : System::Sysutils::Exception(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall EheFontStockException(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : System::Sysutils::Exception(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall EheFontStockException(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : System::Sysutils::Exception(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall EheFontStockException(NativeUInt Ident)/* overload */ : System::Sysutils::Exception(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall EheFontStockException(System::PResStringRec ResStringRec)/* overload */ : System::Sysutils::Exception(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall EheFontStockException(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall EheFontStockException(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall EheFontStockException(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall EheFontStockException(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall EheFontStockException(const System::UnicodeString Msg, int AHelpContext) : System::Sysutils::Exception(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall EheFontStockException(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall EheFontStockException(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall EheFontStockException(NativeUInt Ident, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall EheFontStockException(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall EheFontStockException(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall EheFontStockException(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall EheFontStockException(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall EheFontStockException(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~EheFontStockException(void) { }
 	
 };
 
 #pragma pack(pop)
 
+class DELPHICLASS TheFontStock;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TheFontStock : public System::TObject
 {
@@ -171,6 +168,7 @@ public:
 
 #pragma pack(pop)
 
+class DELPHICLASS EheTextDrawerException;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION EheTextDrawerException : public System::Sysutils::Exception
 {
@@ -178,23 +176,24 @@ class PASCALIMPLEMENTATION EheTextDrawerException : public System::Sysutils::Exc
 	
 public:
 	/* Exception.Create */ inline __fastcall EheTextDrawerException(const System::UnicodeString Msg) : System::Sysutils::Exception(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall EheTextDrawerException(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : System::Sysutils::Exception(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall EheTextDrawerException(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : System::Sysutils::Exception(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall EheTextDrawerException(NativeUInt Ident)/* overload */ : System::Sysutils::Exception(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall EheTextDrawerException(System::PResStringRec ResStringRec)/* overload */ : System::Sysutils::Exception(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall EheTextDrawerException(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall EheTextDrawerException(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall EheTextDrawerException(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall EheTextDrawerException(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall EheTextDrawerException(const System::UnicodeString Msg, int AHelpContext) : System::Sysutils::Exception(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall EheTextDrawerException(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall EheTextDrawerException(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall EheTextDrawerException(NativeUInt Ident, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall EheTextDrawerException(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall EheTextDrawerException(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall EheTextDrawerException(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall EheTextDrawerException(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall EheTextDrawerException(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~EheTextDrawerException(void) { }
 	
 };
 
 #pragma pack(pop)
 
+class DELPHICLASS TheTextDrawer;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TheTextDrawer : public System::TObject
 {

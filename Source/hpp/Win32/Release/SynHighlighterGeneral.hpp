@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterGeneral.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterGeneral.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlightergeneralHPP
 #define SynhighlightergeneralHPP
@@ -12,28 +12,26 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynUnicode.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlightergeneral
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynGeneralSyn;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM TtkTokenKind : unsigned char { tkComment, tkIdentifier, tkKey, tkNull, tkNumber, tkPreprocessor, tkSpace, tkString, tkSymbol, tkUnknown };
 
 enum DECLSPEC_DENUM TCommentStyle : unsigned char { csAnsiStyle, csPasStyle, csCStyle, csAsmStyle, csBasStyle, csCPPStyle };
 
-typedef System::Set<TCommentStyle, TCommentStyle::csAnsiStyle, TCommentStyle::csCPPStyle> TCommentStyles;
+typedef System::Set<TCommentStyle, TCommentStyle::csAnsiStyle, TCommentStyle::csCPPStyle>  TCommentStyles;
 
 enum DECLSPEC_DENUM TRangeState : unsigned char { rsANil, rsAnsi, rsPasStyle, rsCStyle, rsUnKnown };
 
@@ -41,6 +39,7 @@ enum DECLSPEC_DENUM TStringDelim : unsigned char { sdSingleQuote, sdDoubleQuote,
 
 typedef void __fastcall (__closure *TGetTokenAttributeEvent)(Synedithighlighter::TSynHighlighterAttributes* attribute);
 
+class DELPHICLASS TSynGeneralSyn;
 class PASCALIMPLEMENTATION TSynGeneralSyn : public Synedithighlighter::TSynCustomHighlighter
 {
 	typedef Synedithighlighter::TSynCustomHighlighter inherited;

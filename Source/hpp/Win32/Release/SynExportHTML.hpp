@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynExportHTML.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynExportHTML.pas' rev: 25.00 (Windows)
 
 #ifndef SynexporthtmlHPP
 #define SynexporthtmlHPP
@@ -12,34 +12,34 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditExport.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.UITypes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditExport.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synexporthtml
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynExporterHTML;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynExporterHTML;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynExporterHTML : public Syneditexport::TSynCustomExporter
 {
 	typedef Syneditexport::TSynCustomExporter inherited;
 	
 private:
 	System::UnicodeString __fastcall AttriToCSS(Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName);
-	bool __fastcall AttriToCSSCallback(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName, void * *Params, const int Params_High);
+	bool __fastcall AttriToCSSCallback(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName, void * *Params, const int Params_Size);
 	System::UnicodeString __fastcall ColorToHTML(System::Uitypes::TColor AColor);
 	System::UnicodeString __fastcall GetStyleName(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri);
 	System::UnicodeString __fastcall MakeValidName(System::UnicodeString Name);
-	bool __fastcall StyleNameCallback(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName, void * *Params, const int Params_High);
+	bool __fastcall StyleNameCallback(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName, void * *Params, const int Params_Size);
 	
 protected:
 	bool fCreateHTMLFragment;
@@ -72,6 +72,7 @@ public:
 	
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Synexporthtml */

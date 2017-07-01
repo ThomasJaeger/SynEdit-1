@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditPrintTypes.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditPrintTypes.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditprinttypesHPP
 #define SyneditprinttypesHPP
@@ -12,22 +12,20 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditprinttypes
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TWrapPos;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM TFrameType : unsigned char { ftLine, ftBox, ftShaded };
 
-typedef System::Set<TFrameType, TFrameType::ftLine, TFrameType::ftShaded> TFrameTypes;
+typedef System::Set<TFrameType, TFrameType::ftLine, TFrameType::ftShaded>  TFrameTypes;
 
 enum DECLSPEC_DENUM TUnitSystem : unsigned char { usMM, usCM, usInch, muThousandthsOfInches };
 
@@ -37,6 +35,7 @@ typedef void __fastcall (__closure *TPrintStatusEvent)(System::TObject* Sender, 
 
 typedef void __fastcall (__closure *TPrintLineEvent)(System::TObject* Sender, int LineNumber, int PageNumber);
 
+class DELPHICLASS TWrapPos;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TWrapPos : public System::TObject
 {

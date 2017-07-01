@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynCompletionProposal.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynCompletionProposal.pas' rev: 25.00 (Windows)
 
 #ifndef SyncompletionproposalHPP
 #define SyncompletionproposalHPP
@@ -12,39 +12,32 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Winapi.Messages.hpp>
-#include <Vcl.Graphics.hpp>
-#include <Vcl.Forms.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.ExtCtrls.hpp>
-#include <Vcl.Menus.hpp>
-#include <Vcl.Dialogs.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditKeyCmds.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynEditKbdHandler.hpp>
-#include <SynEdit.hpp>
-#include <SynUnicode.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
-#include <System.Types.hpp>
-#include <System.UITypes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Winapi.Messages.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <Vcl.Forms.hpp>	// Pascal unit
+#include <Vcl.Controls.hpp>	// Pascal unit
+#include <Vcl.StdCtrls.hpp>	// Pascal unit
+#include <Vcl.ExtCtrls.hpp>	// Pascal unit
+#include <Vcl.Menus.hpp>	// Pascal unit
+#include <Vcl.Dialogs.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditKeyCmds.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynEditKbdHandler.hpp>	// Pascal unit
+#include <SynEdit.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.Types.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syncompletionproposal
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynBaseCompletionProposalForm;
-class DELPHICLASS TSynBaseCompletionProposal;
-class DELPHICLASS TSynCompletionProposal;
-class DELPHICLASS TSynAutoComplete;
-class DELPHICLASS TProposalColumn;
-class DELPHICLASS TProposalColumns;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM SynCompletionType : unsigned char { ctCode, ctHint, ctParams };
 
@@ -68,8 +61,10 @@ typedef void __fastcall (__closure *TCompletionChange)(System::TObject* Sender, 
 
 enum DECLSPEC_DENUM TSynCompletionOption : unsigned char { scoCaseSensitive, scoLimitToMatchedText, scoTitleIsCentered, scoUseInsertList, scoUsePrettyText, scoUseBuiltInTimer, scoEndCharCompletion, scoConsiderWordBreakChars, scoCompleteWithTab, scoCompleteWithEnter };
 
-typedef System::Set<TSynCompletionOption, TSynCompletionOption::scoCaseSensitive, TSynCompletionOption::scoCompleteWithEnter> TSynCompletionOptions;
+typedef System::Set<TSynCompletionOption, TSynCompletionOption::scoCaseSensitive, TSynCompletionOption::scoCompleteWithEnter>  TSynCompletionOptions;
 
+class DELPHICLASS TSynBaseCompletionProposalForm;
+class DELPHICLASS TProposalColumns;
 class PASCALIMPLEMENTATION TSynBaseCompletionProposalForm : public Vcl::Forms::TCustomForm
 {
 	typedef Vcl::Forms::TCustomForm inherited;
@@ -220,6 +215,7 @@ public:
 };
 
 
+class DELPHICLASS TSynBaseCompletionProposal;
 class PASCALIMPLEMENTATION TSynBaseCompletionProposal : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -356,6 +352,7 @@ public:
 };
 
 
+class DELPHICLASS TSynCompletionProposal;
 class PASCALIMPLEMENTATION TSynCompletionProposal : public TSynBaseCompletionProposal
 {
 	typedef TSynBaseCompletionProposal inherited;
@@ -419,6 +416,7 @@ __published:
 };
 
 
+class DELPHICLASS TSynAutoComplete;
 class PASCALIMPLEMENTATION TSynAutoComplete : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -472,6 +470,7 @@ __published:
 };
 
 
+class DELPHICLASS TProposalColumn;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TProposalColumn : public System::Classes::TCollectionItem
 {
@@ -503,7 +502,7 @@ class PASCALIMPLEMENTATION TProposalColumns : public System::Classes::TCollectio
 	typedef System::Classes::TCollection inherited;
 	
 public:
-	TProposalColumn* operator[](int Index) { return this->Items[Index]; }
+	TProposalColumn* operator[](int Index) { return Items[Index]; }
 	
 private:
 	System::Classes::TPersistent* FOwner;
@@ -527,7 +526,7 @@ public:
 #pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
-#define DefaultProposalOptions (System::Set<TSynCompletionOption, TSynCompletionOption::scoCaseSensitive, TSynCompletionOption::scoCompleteWithEnter>() << TSynCompletionOption::scoLimitToMatchedText << TSynCompletionOption::scoEndCharCompletion << TSynCompletionOption::scoCompleteWithTab << TSynCompletionOption::scoCompleteWithEnter )
+#define DefaultProposalOptions (System::Set<TSynCompletionOption, TSynCompletionOption::scoCaseSensitive, TSynCompletionOption::scoCompleteWithEnter> () << TSynCompletionOption::scoLimitToMatchedText << TSynCompletionOption::scoEndCharCompletion << TSynCompletionOption::scoCompleteWithTab << TSynCompletionOption::scoCompleteWithEnter )
 #define DefaultEndOfTokenChr L"()[]. "
 extern DELPHI_PACKAGE void __fastcall FormattedTextOut(Vcl::Graphics::TCanvas* TargetCanvas, const System::Types::TRect &Rect, const System::UnicodeString Text, bool Selected, TProposalColumns* Columns, Vcl::Controls::TImageList* Images);
 extern DELPHI_PACKAGE int __fastcall FormattedTextWidth(Vcl::Graphics::TCanvas* TargetCanvas, const System::UnicodeString Text, TProposalColumns* Columns, Vcl::Controls::TImageList* Images);

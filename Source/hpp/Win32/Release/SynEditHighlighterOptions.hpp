@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditHighlighterOptions.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditHighlighterOptions.pas' rev: 25.00 (Windows)
 
 #ifndef SynedithighlighteroptionsHPP
 #define SynedithighlighteroptionsHPP
@@ -12,17 +12,16 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synedithighlighteroptions
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynEditHighlighterOptions;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynEditHighlighterOptions;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditHighlighterOptions : public System::Classes::TPersistent
 {

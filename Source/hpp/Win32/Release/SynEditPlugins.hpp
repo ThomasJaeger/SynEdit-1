@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditPlugins.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditPlugins.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditpluginsHPP
 #define SyneditpluginsHPP
@@ -12,25 +12,22 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Menus.hpp>
-#include <SynEdit.hpp>
-#include <SynEditKeyCmds.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Menus.hpp>	// Pascal unit
+#include <SynEdit.hpp>	// Pascal unit
+#include <SynEditKeyCmds.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditplugins
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TAbstractSynPlugin;
-class DELPHICLASS TAbstractSynHookerPlugin;
-class DELPHICLASS TAbstractSynSingleHookPlugin;
-class DELPHICLASS TAbstractSynCompletion;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TAbstractSynPlugin;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TAbstractSynPlugin : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -61,7 +58,10 @@ public:
 	
 };
 
+#pragma pack(pop)
 
+class DELPHICLASS TAbstractSynHookerPlugin;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TAbstractSynHookerPlugin : public TAbstractSynPlugin
 {
 	typedef TAbstractSynPlugin inherited;
@@ -78,9 +78,12 @@ public:
 	
 };
 
+#pragma pack(pop)
 
 enum DECLSPEC_DENUM TPluginState : unsigned char { psNone, psExecuting, psAccepting, psCancelling };
 
+class DELPHICLASS TAbstractSynSingleHookPlugin;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TAbstractSynSingleHookPlugin : public TAbstractSynHookerPlugin
 {
 	typedef TAbstractSynHookerPlugin inherited;
@@ -115,7 +118,10 @@ __published:
 	__property System::Classes::TShortCut ShortCut = {read=fShortCut, write=SetShortCut, stored=IsShortCutStored, nodefault};
 };
 
+#pragma pack(pop)
 
+class DELPHICLASS TAbstractSynCompletion;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TAbstractSynCompletion : public TAbstractSynSingleHookPlugin
 {
 	typedef TAbstractSynSingleHookPlugin inherited;
@@ -138,6 +144,7 @@ public:
 	
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 extern DELPHI_PACKAGE Syneditkeycmds::TSynEditorCommand __fastcall NewPluginCommand(void);

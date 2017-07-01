@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditTextBuffer.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditTextBuffer.pas' rev: 25.00 (Windows)
 
 #ifndef SynedittextbufferHPP
 #define SynedittextbufferHPP
@@ -12,34 +12,28 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditMiscProcs.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
-#include <Vcl.Graphics.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditMiscProcs.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synedittextbuffer
 {
-//-- forward type declarations -----------------------------------------------
-struct TSynEditStringRec;
-struct TSynEditTwoWideChars;
-class DELPHICLASS TSynEditStringList;
-class DELPHICLASS ESynEditStringList;
-class DELPHICLASS TSynEditUndoItem;
-class DELPHICLASS TSynEditUndoList;
 //-- type declarations -------------------------------------------------------
 typedef void * TSynEditRange;
 
 enum DECLSPEC_DENUM TSynEditStringFlag : unsigned char { sfHasTabs, sfHasNoTabs, sfExpandedLengthUnknown };
 
-typedef System::Set<TSynEditStringFlag, TSynEditStringFlag::sfHasTabs, TSynEditStringFlag::sfExpandedLengthUnknown> TSynEditStringFlags;
+typedef System::Set<TSynEditStringFlag, TSynEditStringFlag::sfHasTabs, TSynEditStringFlag::sfExpandedLengthUnknown>  TSynEditStringFlags;
 
+struct TSynEditStringRec;
 typedef TSynEditStringRec *PSynEditStringRec;
 
 struct DECLSPEC_DRECORD TSynEditStringRec
@@ -74,6 +68,7 @@ typedef System::UnicodeString __fastcall (__closure *TExpandAtWideGlyphsFunc)(co
 
 enum DECLSPEC_DENUM TSynEditFileFormat : unsigned char { sffDos, sffUnix, sffMac, sffUnicode };
 
+class DELPHICLASS TSynEditStringList;
 class PASCALIMPLEMENTATION TSynEditStringList : public System::Classes::TStrings
 {
 	typedef System::Classes::TStrings inherited;
@@ -152,7 +147,7 @@ public:
 	__property TStringListChangeEvent OnDeleted = {read=fOnDeleted, write=fOnDeleted};
 	__property TStringListChangeEvent OnInserted = {read=fOnInserted, write=fOnInserted};
 	__property TStringListChangeEvent OnPutted = {read=fOnPutted, write=fOnPutted};
-	/* Hoisted overloads: */
+/* Hoisted overloads: */
 	
 public:
 	inline void __fastcall  AddStrings(const System::DynamicArray<System::UnicodeString> Strings){ System::Classes::TStrings::AddStrings(Strings); }
@@ -163,6 +158,7 @@ public:
 };
 
 
+class DELPHICLASS ESynEditStringList;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION ESynEditStringList : public System::Sysutils::Exception
 {
@@ -170,17 +166,17 @@ class PASCALIMPLEMENTATION ESynEditStringList : public System::Sysutils::Excepti
 	
 public:
 	/* Exception.Create */ inline __fastcall ESynEditStringList(const System::UnicodeString Msg) : System::Sysutils::Exception(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall ESynEditStringList(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : System::Sysutils::Exception(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall ESynEditStringList(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : System::Sysutils::Exception(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall ESynEditStringList(NativeUInt Ident)/* overload */ : System::Sysutils::Exception(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall ESynEditStringList(System::PResStringRec ResStringRec)/* overload */ : System::Sysutils::Exception(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynEditStringList(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynEditStringList(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynEditStringList(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynEditStringList(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall ESynEditStringList(const System::UnicodeString Msg, int AHelpContext) : System::Sysutils::Exception(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall ESynEditStringList(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall ESynEditStringList(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynEditStringList(NativeUInt Ident, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynEditStringList(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditStringList(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditStringList(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditStringList(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditStringList(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~ESynEditStringList(void) { }
 	
 };
@@ -189,6 +185,7 @@ public:
 
 enum DECLSPEC_DENUM TSynChangeReason : unsigned char { crInsert, crPaste, crDragDropInsert, crDeleteAfterCursor, crDelete, crLineBreak, crIndent, crUnindent, crSilentDelete, crSilentDeleteAfterCursor, crAutoCompleteBegin, crAutoCompleteEnd, crPasteBegin, crPasteEnd, crSpecial1Begin, crSpecial1End, crSpecial2Begin, crSpecial2End, crCaret, crSelection, crNothing, crGroupBreak, crDeleteAll, crWhiteSpaceAdd };
 
+class DELPHICLASS TSynEditUndoItem;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditUndoItem : public System::Classes::TPersistent
 {
@@ -220,6 +217,7 @@ public:
 
 #pragma pack(pop)
 
+class DELPHICLASS TSynEditUndoList;
 class PASCALIMPLEMENTATION TSynEditUndoList : public System::Classes::TPersistent
 {
 	typedef System::Classes::TPersistent inherited;

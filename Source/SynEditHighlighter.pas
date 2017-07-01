@@ -1081,7 +1081,7 @@ end;
 function TSynCustomHighlighter.IsIdentChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-    '_', '0'..'9', 'A'..'Z', 'a'..'z':
+    '[', ']', '?', '.', '_', '0'..'9', 'A'..'Z', 'a'..'z':
       Result := True;
     else
       Result := False;
@@ -1111,18 +1111,12 @@ end;
 function TSynCustomHighlighter.IsWordBreakChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-    '.', ',', ';', ':', '"', '''', '´', '`', '°', '^', '!', '?', '&',
-    '$', '@', '§', '%', '#', '~', '[', ']', '(', ')', '{', '}', '<', '>',
+    #0..#32, ',', ';', ':', '"', '''', #$B4, #$60, '°', '^', '!', '&',
+    '$', '@', '§', '%', '#', '~', '(', ')', '{', '}', '<', '>',
     '-', '=', '+', '*', '/', '\', '|':
       Result := True;
     else
-    begin
-      case Ord(AChar) of
-      0..32: Result := True;
-      else
-       Result := False;
-      end;
-    end;
+      Result := False;
   end;
 end;
 

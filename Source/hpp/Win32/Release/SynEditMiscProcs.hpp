@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditMiscProcs.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditMiscProcs.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditmiscprocsHPP
 #define SyneditmiscprocsHPP
@@ -12,21 +12,20 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynUnicode.hpp>
-#include <System.Math.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Math.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditmiscprocs
 {
-//-- forward type declarations -----------------------------------------------
 //-- type declarations -------------------------------------------------------
 typedef System::StaticArray<int, 134217727> TIntArray;
 
@@ -36,7 +35,7 @@ typedef System::UnicodeString __fastcall (*TConvertTabsProc)(const System::Unico
 
 typedef System::UnicodeString __fastcall (*TConvertTabsProcEx)(const System::UnicodeString Line, int TabWidth, bool &HasTabs);
 
-typedef bool __fastcall (__closure *THighlighterAttriProc)(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName, void * *Params, const int Params_High);
+typedef bool __fastcall (__closure *THighlighterAttriProc)(Synedithighlighter::TSynCustomHighlighter* Highlighter, Synedithighlighter::TSynHighlighterAttributes* Attri, System::UnicodeString UniqueAttriName, void * *Params, const int Params_Size);
 
 //-- var, const, procedure ---------------------------------------------------
 static const int MaxIntArraySize = int(0x7ffffff);
@@ -59,7 +58,7 @@ extern DELPHI_PACKAGE System::WideChar * __fastcall GetEOL(System::WideChar * Li
 extern DELPHI_PACKAGE System::UnicodeString __fastcall EncodeString(System::UnicodeString s);
 extern DELPHI_PACKAGE System::UnicodeString __fastcall DecodeString(System::UnicodeString s);
 extern DELPHI_PACKAGE System::UnicodeString __fastcall DeleteTypePrefixAndSynSuffix(System::UnicodeString S);
-extern DELPHI_PACKAGE bool __fastcall EnumHighlighterAttris(Synedithighlighter::TSynCustomHighlighter* Highlighter, bool SkipDuplicates, THighlighterAttriProc HighlighterAttriProc, void * *Params, const int Params_High);
+extern DELPHI_PACKAGE bool __fastcall EnumHighlighterAttris(Synedithighlighter::TSynCustomHighlighter* Highlighter, bool SkipDuplicates, THighlighterAttriProc HighlighterAttriProc, void * *Params, const int Params_Size);
 extern DELPHI_PACKAGE void __fastcall SynDrawGradient(Vcl::Graphics::TCanvas* const ACanvas, const System::Uitypes::TColor AStartColor, const System::Uitypes::TColor AEndColor, int ASteps, const System::Types::TRect &ARect, const bool AHorizontal);
 }	/* namespace Syneditmiscprocs */
 #if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_SYNEDITMISCPROCS)

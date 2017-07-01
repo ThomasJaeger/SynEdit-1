@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditMiscClasses.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditMiscClasses.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditmiscclassesHPP
 #define SyneditmiscclassesHPP
@@ -12,42 +12,31 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Vcl.Consts.hpp>
-#include <Winapi.Windows.hpp>
-#include <Winapi.Messages.hpp>
-#include <Vcl.Graphics.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.Forms.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.Menus.hpp>
-#include <System.Win.Registry.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditKeyConst.hpp>
-#include <SynUnicode.hpp>
-#include <System.Math.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
-#include <System.UITypes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Vcl.Consts.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Winapi.Messages.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <Vcl.Controls.hpp>	// Pascal unit
+#include <Vcl.Forms.hpp>	// Pascal unit
+#include <Vcl.StdCtrls.hpp>	// Pascal unit
+#include <Vcl.Menus.hpp>	// Pascal unit
+#include <System.Win.Registry.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditKeyConst.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Math.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditmiscclasses
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynSelectedColor;
-class DELPHICLASS TSynGutter;
-class DELPHICLASS TSynBookMarkOpt;
-class DELPHICLASS TSynGlyph;
-class DELPHICLASS ESynMethodChain;
-class DELPHICLASS TSynMethodChain;
-class DELPHICLASS TSynNotifyEventChain;
-class DELPHICLASS TSynInternalImage;
-class DELPHICLASS TSynHotKey;
-class DELPHICLASS TSynEditSearchCustom;
-class DELPHICLASS TBetterRegistry;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynSelectedColor;
 class PASCALIMPLEMENTATION TSynSelectedColor : public System::Classes::TPersistent
 {
 	typedef System::Classes::TPersistent inherited;
@@ -75,6 +64,7 @@ public:
 
 enum DECLSPEC_DENUM TSynGutterBorderStyle : unsigned char { gbsNone, gbsMiddle, gbsRight };
 
+class DELPHICLASS TSynGutter;
 class PASCALIMPLEMENTATION TSynGutter : public System::Classes::TPersistent
 {
 	typedef System::Classes::TPersistent inherited;
@@ -157,6 +147,7 @@ __published:
 };
 
 
+class DELPHICLASS TSynBookMarkOpt;
 class PASCALIMPLEMENTATION TSynBookMarkOpt : public System::Classes::TPersistent
 {
 	typedef System::Classes::TPersistent inherited;
@@ -194,6 +185,7 @@ public:
 };
 
 
+class DELPHICLASS TSynGlyph;
 class PASCALIMPLEMENTATION TSynGlyph : public System::Classes::TPersistent
 {
 	typedef System::Classes::TPersistent inherited;
@@ -228,6 +220,7 @@ __published:
 };
 
 
+class DELPHICLASS ESynMethodChain;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION ESynMethodChain : public System::Sysutils::Exception
 {
@@ -235,17 +228,17 @@ class PASCALIMPLEMENTATION ESynMethodChain : public System::Sysutils::Exception
 	
 public:
 	/* Exception.Create */ inline __fastcall ESynMethodChain(const System::UnicodeString Msg) : System::Sysutils::Exception(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall ESynMethodChain(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : System::Sysutils::Exception(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall ESynMethodChain(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : System::Sysutils::Exception(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall ESynMethodChain(NativeUInt Ident)/* overload */ : System::Sysutils::Exception(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall ESynMethodChain(System::PResStringRec ResStringRec)/* overload */ : System::Sysutils::Exception(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynMethodChain(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynMethodChain(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynMethodChain(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynMethodChain(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall ESynMethodChain(const System::UnicodeString Msg, int AHelpContext) : System::Sysutils::Exception(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall ESynMethodChain(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall ESynMethodChain(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : System::Sysutils::Exception(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynMethodChain(NativeUInt Ident, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynMethodChain(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynMethodChain(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynMethodChain(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynMethodChain(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynMethodChain(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : System::Sysutils::Exception(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~ESynMethodChain(void) { }
 	
 };
@@ -254,6 +247,7 @@ public:
 
 typedef void __fastcall (__closure *TSynExceptionEvent)(System::TObject* Sender, System::Sysutils::Exception* E, bool &DoContinue);
 
+class DELPHICLASS TSynMethodChain;
 class PASCALIMPLEMENTATION TSynMethodChain : public System::TObject
 {
 	typedef System::TObject inherited;
@@ -276,6 +270,7 @@ public:
 };
 
 
+class DELPHICLASS TSynNotifyEventChain;
 class PASCALIMPLEMENTATION TSynNotifyEventChain : public TSynMethodChain
 {
 	typedef TSynMethodChain inherited;
@@ -299,6 +294,7 @@ public:
 };
 
 
+class DELPHICLASS TSynInternalImage;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynInternalImage : public System::TObject
 {
@@ -325,12 +321,13 @@ typedef Vcl::Forms::TFormBorderStyle TSynBorderStyle;
 
 enum DECLSPEC_DENUM THKModifier : unsigned char { hkShift, hkCtrl, hkAlt };
 
-typedef System::Set<THKModifier, THKModifier::hkShift, THKModifier::hkAlt> THKModifiers;
+typedef System::Set<THKModifier, THKModifier::hkShift, THKModifier::hkAlt>  THKModifiers;
 
 enum DECLSPEC_DENUM THKInvalidKey : unsigned char { hcNone, hcShift, hcCtrl, hcAlt, hcShiftCtrl, hcShiftAlt, hcCtrlAlt, hcShiftCtrlAlt };
 
-typedef System::Set<THKInvalidKey, THKInvalidKey::hcNone, THKInvalidKey::hcShiftCtrlAlt> THKInvalidKeys;
+typedef System::Set<THKInvalidKey, THKInvalidKey::hcNone, THKInvalidKey::hcShiftCtrlAlt>  THKInvalidKeys;
 
+class DELPHICLASS TSynHotKey;
 class PASCALIMPLEMENTATION TSynHotKey : public Vcl::Controls::TCustomControl
 {
 	typedef Vcl::Controls::TCustomControl inherited;
@@ -374,6 +371,8 @@ public:
 };
 
 
+class DELPHICLASS TSynEditSearchCustom;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditSearchCustom : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -400,7 +399,9 @@ public:
 	
 };
 
+#pragma pack(pop)
 
+class DELPHICLASS TBetterRegistry;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TBetterRegistry : public System::Win::Registry::TRegistry
 {

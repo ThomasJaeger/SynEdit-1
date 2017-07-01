@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditExport.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditExport.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditexportHPP
 #define SyneditexportHPP
@@ -12,26 +12,24 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <Vcl.Clipbrd.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynEditTypes.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
-#include <System.UITypes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <Vcl.Clipbrd.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditexport
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS ESynEncoding;
-class DELPHICLASS TSynCustomExporter;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS ESynEncoding;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION ESynEncoding : public Synedittypes::ESynError
 {
@@ -39,23 +37,25 @@ class PASCALIMPLEMENTATION ESynEncoding : public Synedittypes::ESynError
 	
 public:
 	/* Exception.Create */ inline __fastcall ESynEncoding(const System::UnicodeString Msg) : Synedittypes::ESynError(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall ESynEncoding(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : Synedittypes::ESynError(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall ESynEncoding(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : Synedittypes::ESynError(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall ESynEncoding(NativeUInt Ident)/* overload */ : Synedittypes::ESynError(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall ESynEncoding(System::PResStringRec ResStringRec)/* overload */ : Synedittypes::ESynError(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynEncoding(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynEncoding(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynEncoding(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynEncoding(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall ESynEncoding(const System::UnicodeString Msg, int AHelpContext) : Synedittypes::ESynError(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall ESynEncoding(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : Synedittypes::ESynError(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall ESynEncoding(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : Synedittypes::ESynError(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynEncoding(NativeUInt Ident, int AHelpContext)/* overload */ : Synedittypes::ESynError(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynEncoding(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : Synedittypes::ESynError(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEncoding(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEncoding(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEncoding(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEncoding(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~ESynEncoding(void) { }
 	
 };
 
 #pragma pack(pop)
 
+class DELPHICLASS TSynCustomExporter;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynCustomExporter : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -131,6 +131,7 @@ public:
 	__property bool UseBackground = {read=fUseBackground, write=SetUseBackground, nodefault};
 };
 
+#pragma pack(pop)
 
 typedef System::StaticArray<System::UnicodeString, 4> Syneditexport__3;
 

@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterHashEntries.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterHashEntries.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlighterhashentriesHPP
 #define SynhighlighterhashentriesHPP
@@ -12,20 +12,18 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <SynEditTypes.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlighterhashentries
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynHashEntry;
-class DELPHICLASS TSynHashEntryList;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynHashEntry;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynHashEntry : public System::TObject
 {
@@ -49,13 +47,14 @@ public:
 
 #pragma pack(pop)
 
+class DELPHICLASS TSynHashEntryList;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynHashEntryList : public System::Classes::TList
 {
 	typedef System::Classes::TList inherited;
 	
 public:
-	TSynHashEntry* operator[](int Index) { return this->Items[Index]; }
+	TSynHashEntry* operator[](int Index) { return Items[Index]; }
 	
 protected:
 	HIDESBASE TSynHashEntry* __fastcall Get(int HashKey);

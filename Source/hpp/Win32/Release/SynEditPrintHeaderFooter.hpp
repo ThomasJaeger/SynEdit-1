@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditPrintHeaderFooter.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditPrintHeaderFooter.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditprintheaderfooterHPP
 #define SyneditprintheaderfooterHPP
@@ -12,28 +12,23 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <SynEditPrintTypes.hpp>
-#include <SynEditPrintMargins.hpp>
-#include <SynUnicode.hpp>
-#include <Vcl.Graphics.hpp>
-#include <System.Classes.hpp>
-#include <System.SysUtils.hpp>
-#include <System.UITypes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <SynEditPrintTypes.hpp>	// Pascal unit
+#include <SynEditPrintMargins.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditprintheaderfooter
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS THeaderFooterItem;
-class DELPHICLASS TLineInfo;
-class DELPHICLASS THeaderFooter;
-class DELPHICLASS THeader;
-class DELPHICLASS TFooter;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS THeaderFooterItem;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION THeaderFooterItem : public System::TObject
 {
@@ -66,6 +61,7 @@ public:
 
 enum DECLSPEC_DENUM THeaderFooterType : unsigned char { hftHeader, hftFooter };
 
+class DELPHICLASS TLineInfo;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TLineInfo : public System::TObject
 {
@@ -82,6 +78,7 @@ public:
 
 #pragma pack(pop)
 
+class DELPHICLASS THeaderFooter;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION THeaderFooter : public System::Classes::TPersistent
 {
@@ -143,6 +140,7 @@ __published:
 
 #pragma pack(pop)
 
+class DELPHICLASS THeader;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION THeader : public THeaderFooter
 {
@@ -157,6 +155,7 @@ public:
 
 #pragma pack(pop)
 
+class DELPHICLASS TFooter;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TFooter : public THeaderFooter
 {

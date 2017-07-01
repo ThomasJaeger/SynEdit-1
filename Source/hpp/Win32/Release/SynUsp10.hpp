@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynUsp10.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynUsp10.pas' rev: 25.00 (Windows)
 
 #ifndef Synusp10HPP
 #define Synusp10HPP
@@ -12,17 +12,14 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synusp10
 {
-//-- forward type declarations -----------------------------------------------
-struct tag_SCRIPT_VISATTR;
-struct tagGOFFSET;
 //-- type declarations -------------------------------------------------------
 typedef void * TScriptCache;
 
@@ -30,7 +27,7 @@ typedef void * *PScriptCache;
 
 enum DECLSPEC_DENUM TScriptControl_enum : unsigned char { fContextDigits, fInvertPreBoundDir, fInvertPostBoundDir, fLinkStringBefore, fLinkStringAfter, fNeutralOverride, fNumericOverride, fLegacyBidiClass };
 
-typedef System::Set<TScriptControl_enum, TScriptControl_enum::fContextDigits, TScriptControl_enum::fLegacyBidiClass> TScriptControl_set;
+typedef System::Set<TScriptControl_enum, TScriptControl_enum::fContextDigits, TScriptControl_enum::fLegacyBidiClass>  TScriptControl_set;
 
 typedef tag_SCRIPT_CONTROL *PScriptControl;
 
@@ -38,7 +35,7 @@ typedef tag_SCRIPT_CONTROL TScriptControl;
 
 enum DECLSPEC_DENUM TScriptState_enum : unsigned char { uBidiLevel_reserved1, uBidiLevel_r2, uBidiLevel_r3, uBidiLevel_r4, uBidiLevel_r5, fOverrideDirection, fInhibitSymSwap, fCharShape, fDigitSubstitute, fInhibitLigate, fDisplayZWG, fArabicNumContext, fGcpClusters };
 
-typedef System::Set<TScriptState_enum, TScriptState_enum::uBidiLevel_reserved1, TScriptState_enum::fGcpClusters> TScriptState_set;
+typedef System::Set<TScriptState_enum, TScriptState_enum::uBidiLevel_reserved1, TScriptState_enum::fGcpClusters>  TScriptState_set;
 
 typedef tag_SCRIPT_STATE *PScriptState;
 
@@ -46,7 +43,7 @@ typedef tag_SCRIPT_STATE TScriptState;
 
 enum DECLSPEC_DENUM TScriptAnalysis_enum : unsigned char { eScript_r1, eScript_r2, eScript_r3, eScript_r4, eScript_r5, eScript_r6, eScript_r7, eScript_r8, eScript_r9, eScript_r10, fRTL, fLayoutRTL, fLinkBefore, fLinkAfter, fLogicalOrder, fNoGlyphIndex };
 
-typedef System::Set<TScriptAnalysis_enum, TScriptAnalysis_enum::eScript_r1, TScriptAnalysis_enum::fNoGlyphIndex> TScriptAnalysis_set;
+typedef System::Set<TScriptAnalysis_enum, TScriptAnalysis_enum::eScript_r1, TScriptAnalysis_enum::fNoGlyphIndex>  TScriptAnalysis_set;
 
 typedef tag_SCRIPT_ANALYSIS *PScriptAnalysis;
 
@@ -64,15 +61,14 @@ typedef tag_SCRIPT_JUSTIFY TScriptJustify;
 
 enum DECLSPEC_DENUM TScriptVisAttr_enum : unsigned char { uJustification_r1, uJustification_r2, uJustification_r3, uJustification_r4, fClusterStart, fDiacritic, fZeroWidth, fReserved };
 
-typedef System::Set<TScriptVisAttr_enum, TScriptVisAttr_enum::uJustification_r1, TScriptVisAttr_enum::fReserved> TScriptVisAttr_set;
+typedef System::Set<TScriptVisAttr_enum, TScriptVisAttr_enum::uJustification_r1, TScriptVisAttr_enum::fReserved>  TScriptVisAttr_set;
 
+struct tag_SCRIPT_VISATTR;
 typedef tag_SCRIPT_VISATTR *PScriptVisAttr;
 
 #pragma pack(push,1)
 struct DECLSPEC_DRECORD tag_SCRIPT_VISATTR
 {
-	
-public:
 	union
 	{
 		struct 
@@ -92,6 +88,7 @@ public:
 
 typedef tag_SCRIPT_VISATTR TScriptVisAttr;
 
+struct tagGOFFSET;
 typedef tagGOFFSET *PGOffset;
 
 struct DECLSPEC_DRECORD tagGOFFSET
@@ -112,7 +109,7 @@ typedef tag_SCRIPT_LOGATTR TScriptLogAttr;
 
 enum DECLSPEC_DENUM TScriptProperties_enum : unsigned char { fNumeric, fComplex, fNeedsWordBreaking, fNeedsCaretInfo, bCharSet, fControl, fPrivateUseArea, fNeedsCharacterJustify, fInvalidGlyph, fInvalidLogAttr, fCDM, fAmbiguousCharSet, fClusterSizeVaries, fRejectInvalid };
 
-typedef System::Set<TScriptProperties_enum, TScriptProperties_enum::fNumeric, TScriptProperties_enum::fRejectInvalid> TScriptProperties_set;
+typedef System::Set<TScriptProperties_enum, TScriptProperties_enum::fNumeric, TScriptProperties_enum::fRejectInvalid>  TScriptProperties_set;
 
 typedef SCRIPT_PROPERTIES *PScriptProperties;
 
@@ -174,7 +171,7 @@ extern DELPHI_PACKAGE bool Usp10IsInstalled;
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptFreeCache(PScriptCache psc);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptTextOut(const HDC hdc, PScriptCache psc, int x, int y, unsigned fuOptions, const System::Types::PRect lprc, const PScriptAnalysis psa, const System::WideChar * pwcReserved, int iReserved, const PWORD pwGlyphs, int cGlyphs, const System::PInteger piAdvance, const System::PInteger piJustify, const PGOffset pGoffset);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptJustify(const PScriptVisAttr psva, const System::PInteger piAdvance, int cGlyphs, int iDx, int iMinKashida, System::PInteger piJustify);
-extern DELPHI_PACKAGE HRESULT __stdcall ScriptCPtoX(int iCP, System::LongBool fTrailing, int cChars, int cGlyphs, const PWORD pwLogClust, const PScriptVisAttr psva, const System::PInteger piAdvance, const PScriptAnalysis psa, System::PInteger piX);
+extern DELPHI_PACKAGE HRESULT __stdcall ScriptCPtoX(int iCP, BOOL fTrailing, int cChars, int cGlyphs, const PWORD pwLogClust, const PScriptVisAttr psva, const System::PInteger piAdvance, const PScriptAnalysis psa, System::PInteger piX);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptXtoCP(int iX, int cChars, int cGlyphs, const PWORD pwLogClust, const PScriptVisAttr psva, const int piAdvance, const PScriptAnalysis psa, System::PInteger piCP, System::PInteger piTrailing);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptGetLogicalWidths(const PScriptAnalysis psa, int cChars, int cGlyphs, const System::PInteger piGlyphWidth, const PWORD pwLogClust, const PScriptVisAttr psva, System::PInteger piDx);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptApplyLogicalWidth(const System::PInteger piDx, int cChars, int cGlyphs, const PWORD pwLogClust, const PScriptVisAttr psva, const System::PInteger piAdvance, const PScriptAnalysis psa, PABC pABC, System::PInteger piJustify);
@@ -189,11 +186,11 @@ extern DELPHI_PACKAGE System::Types::PSize __stdcall ScriptString_pSize(void * s
 extern DELPHI_PACKAGE System::PInteger __stdcall ScriptString_pcOutChars(void * ssa);
 extern DELPHI_PACKAGE PScriptLogAttr __stdcall ScriptString_pLogAttr(void * ssa);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringGetOrder(void * ssa, System::PLongWord puOrder);
-extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringCPtoX(void * ssa, int icp, System::LongBool fTrailing, /* out */ int &pX);
+extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringCPtoX(void * ssa, int icp, BOOL fTrailing, /* out */ int &pX);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringXtoCP(void * ssa, int iX, System::PInteger piCh, System::PInteger piTrailing);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringGetLogicalWidths(void * ssa, /* out */ int &piDx);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringValidate(void * ssa);
-extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringOut(void * ssa, int iX, int iY, unsigned uOptions, const System::Types::PRect prc, int iMinSel, int iMaxSel, System::LongBool fDisabled);
+extern DELPHI_PACKAGE HRESULT __stdcall ScriptStringOut(void * ssa, int iX, int iY, unsigned uOptions, const System::Types::PRect prc, int iMinSel, int iMaxSel, BOOL fDisabled);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptIsComplex(const System::WideChar * pwcInChars, int cInChars, unsigned dwFlags);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptRecordDigitSubstitution(unsigned Locale, /* out */ tag_SCRIPT_DIGITSUBSTITUTE &psds);
 extern DELPHI_PACKAGE HRESULT __stdcall ScriptApplyDigitSubstitution(const PScriptDigitSubstitute psds, PScriptControl psc, PScriptState pss);

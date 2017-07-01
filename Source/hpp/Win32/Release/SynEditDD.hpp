@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditDD.dpk' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditDD.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditddHPP
 #define SyneditddHPP
@@ -12,161 +12,158 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>	// (rtl)
-#include <SysInit.hpp>
-#include <SynEditReg.hpp>
-#include <SynEditPropertyReg.hpp>
-#include <SynHighlighterManager.hpp>
-#include <Winapi.Windows.hpp>	// (rtl)
-#include <Winapi.PsAPI.hpp>	// (rtl)
-#include <System.Character.hpp>	// (rtl)
-#include <System.Internal.ExcUtils.hpp>	// (rtl)
-#include <System.SysUtils.hpp>	// (rtl)
-#include <System.VarUtils.hpp>	// (rtl)
-#include <System.Variants.hpp>	// (rtl)
-#include <System.Rtti.hpp>	// (rtl)
-#include <System.TypInfo.hpp>	// (rtl)
-#include <System.Math.hpp>	// (rtl)
-#include <System.Generics.Defaults.hpp>	// (rtl)
-#include <System.Classes.hpp>	// (rtl)
-#include <System.TimeSpan.hpp>	// (rtl)
-#include <System.DateUtils.hpp>	// (rtl)
-#include <System.IOUtils.hpp>	// (rtl)
-#include <System.Win.Registry.hpp>	// (rtl)
-#include <Vcl.Graphics.hpp>	// (vcl)
-#include <System.Actions.hpp>	// (rtl)
-#include <Vcl.ActnList.hpp>	// (vcl)
-#include <System.HelpIntfs.hpp>	// (rtl)
-#include <System.SyncObjs.hpp>	// (rtl)
-#include <Winapi.UxTheme.hpp>	// (rtl)
-#include <Vcl.GraphUtil.hpp>	// (vcl)
-#include <Vcl.StdCtrls.hpp>	// (vcl)
-#include <Winapi.ShellAPI.hpp>	// (rtl)
-#include <Vcl.Printers.hpp>	// (vcl)
-#include <Vcl.Clipbrd.hpp>	// (vcl)
-#include <Vcl.ComCtrls.hpp>	// (vcl)
-#include <Vcl.Dialogs.hpp>	// (vcl)
-#include <Vcl.ExtCtrls.hpp>	// (vcl)
-#include <Vcl.Themes.hpp>	// (vcl)
-#include <System.AnsiStrings.hpp>	// (rtl)
-#include <System.Win.ComObj.hpp>	// (rtl)
-#include <Winapi.FlatSB.hpp>	// (rtl)
-#include <Vcl.Forms.hpp>	// (vcl)
-#include <Vcl.Menus.hpp>	// (vcl)
-#include <Winapi.MsCTF.hpp>	// (rtl)
-#include <Vcl.Controls.hpp>	// (vcl)
-#include <SynEditMiscClasses.hpp>	// (SynEditDR)
-#include <SynEditHighlighter.hpp>	// (SynEditDR)
-#include <SynRegExpr.hpp>	// (SynEditDR)
-#include <SynUnicode.hpp>	// (SynEditDR)
-#include <SynTextDrawer.hpp>	// (SynEditDR)
-#include <SynEditKeyCmds.hpp>	// (SynEditDR)
-#include <SynEdit.hpp>	// (SynEditDR)
-#include <Vcl.Buttons.hpp>	// (vcl)
-#include <Data.SqlTimSt.hpp>	// (dbrtl)
-#include <Data.FmtBcd.hpp>	// (dbrtl)
-#include <Data.DB.hpp>	// (dbrtl)
-#include <Vcl.DBLogDlg.hpp>	// (vcldb)
-#include <Vcl.DBPWDlg.hpp>	// (vcldb)
-#include <Vcl.DBCtrls.hpp>	// (vcldb)
-#include <SynEditExport.hpp>	// (SynEditDR)
-#include <SynExportHTML.hpp>	// (SynEditDR)
-#include <SynExportRTF.hpp>	// (SynEditDR)
-#include <Vcl.CheckLst.hpp>	// (vclx)
-#include <SynHighlighterADSP21xx.hpp>	// (SynEditDR)
-#include <SynHighlighterAsm.hpp>	// (SynEditDR)
-#include <SynHighlighterAWK.hpp>	// (SynEditDR)
-#include <SynHighlighterBaan.hpp>	// (SynEditDR)
-#include <SynHighlighterBat.hpp>	// (SynEditDR)
-#include <SynHighlighterCAC.hpp>	// (SynEditDR)
-#include <SynHighlighterCache.hpp>	// (SynEditDR)
-#include <SynHighlighterCobol.hpp>	// (SynEditDR)
-#include <SynHighlighterCpp.hpp>	// (SynEditDR)
-#include <SynHighlighterCS.hpp>	// (SynEditDR)
-#include <SynHighlighterCSS.hpp>	// (SynEditDR)
-#include <SynHighlighterDfm.hpp>	// (SynEditDR)
-#include <SynHighlighterDml.hpp>	// (SynEditDR)
-#include <SynHighlighterDOT.hpp>	// (SynEditDR)
-#include <SynHighlighterDWS.hpp>	// (SynEditDR)
-#include <SynHighlighterEiffel.hpp>	// (SynEditDR)
-#include <SynHighlighterFortran.hpp>	// (SynEditDR)
-#include <SynHighlighterFoxpro.hpp>	// (SynEditDR)
-#include <SynHighlighterGalaxy.hpp>	// (SynEditDR)
-#include <SynHighlighterGeneral.hpp>	// (SynEditDR)
-#include <SynHighlighterHaskell.hpp>	// (SynEditDR)
-#include <SynHighlighterHC11.hpp>	// (SynEditDR)
-#include <SynHighlighterHP48.hpp>	// (SynEditDR)
-#include <SynHighlighterHtml.hpp>	// (SynEditDR)
-#include <SynHighlighterIni.hpp>	// (SynEditDR)
-#include <SynHighlighterInno.hpp>	// (SynEditDR)
-#include <SynHighlighterJava.hpp>	// (SynEditDR)
-#include <SynHighlighterJScript.hpp>	// (SynEditDR)
-#include <SynHighlighterJSON.hpp>	// (SynEditDR)
-#include <SynHighlighterKix.hpp>	// (SynEditDR)
-#include <SynHighlighterModelica.hpp>	// (SynEditDR)
-#include <SynHighlighterM3.hpp>	// (SynEditDR)
-#include <SynHighlighterPas.hpp>	// (SynEditDR)
-#include <SynHighlighterPerl.hpp>	// (SynEditDR)
-#include <SynHighlighterPHP.hpp>	// (SynEditDR)
-#include <SynHighlighterProgress.hpp>	// (SynEditDR)
-#include <SynHighlighterPython.hpp>	// (SynEditDR)
-#include <SynHighlighterRC.hpp>	// (SynEditDR)
-#include <SynHighlighterRuby.hpp>	// (SynEditDR)
-#include <SynHighlighterSml.hpp>	// (SynEditDR)
-#include <SynHighlighterSQL.hpp>	// (SynEditDR)
-#include <SynHighlighterTclTk.hpp>	// (SynEditDR)
-#include <SynHighlighterTeX.hpp>	// (SynEditDR)
-#include <SynHighlighterUNIXShellScript.hpp>	// (SynEditDR)
-#include <SynHighlighterURI.hpp>	// (SynEditDR)
-#include <SynHighlighterVB.hpp>	// (SynEditDR)
-#include <SynHighlighterVBScript.hpp>	// (SynEditDR)
-#include <SynHighlighterVrml97.hpp>	// (SynEditDR)
-#include <SynHighlighterGWS.hpp>	// (SynEditDR)
-#include <SynHighlighterCPM.hpp>	// (SynEditDR)
-#include <SynHighlighterSDD.hpp>	// (SynEditDR)
-#include <SynHighlighterXML.hpp>	// (SynEditDR)
-#include <SynHighlighterMsg.hpp>	// (SynEditDR)
-#include <SynHighlighterIDL.hpp>	// (SynEditDR)
-#include <SynHighlighterUnreal.hpp>	// (SynEditDR)
-#include <SynHighlighterST.hpp>	// (SynEditDR)
-#include <SynHighlighterLDraw.hpp>	// (SynEditDR)
-#include <SynURIOpener.hpp>	// (SynEditDR)
-#include <IDEMessages.hpp>	// (designide)
-#include <Vcl.CaptionedDockTree.hpp>	// (vcl)
-#include <Vcl.DockTabSet.hpp>	// (vcl)
-#include <PercentageDockTree.hpp>	// (designide)
-#include <BrandingAPI.hpp>	// (designide)
-#include <Vcl.ExtDlgs.hpp>	// (vcl)
-#include <Winapi.Mapi.hpp>	// (rtl)
-#include <Vcl.ExtActns.hpp>	// (vcl)
-#include <Vcl.ActnMenus.hpp>	// (vclactnband)
-#include <Vcl.ActnMan.hpp>	// (vclactnband)
-#include <Vcl.PlatformDefaultStyleActnCtrls.hpp>	// (vclactnband)
-#include <BaseDock.hpp>	// (designide)
-#include <DeskUtil.hpp>	// (designide)
-#include <DeskForm.hpp>	// (designide)
-#include <DockForm.hpp>	// (designide)
-#include <Xml.Win.msxmldom.hpp>	// (xmlrtl)
-#include <Xml.xmldom.hpp>	// (xmlrtl)
-#include <ToolsAPI.hpp>	// (designide)
-#include <Proxies.hpp>	// (designide)
-#include <DesignEditors.hpp>	// (designide)
-#include <System.Devices.hpp>	// (rtl)
-#include <Vcl.AxCtrls.hpp>	// (vcl)
-#include <Vcl.AppEvnts.hpp>	// (vcl)
-#include <TreeIntf.hpp>	// (designide)
-#include <TopLevels.hpp>	// (designide)
-#include <StFilSys.hpp>	// (designide)
-#include <IDEHelp.hpp>	// (designide)
-#include <ComponentDesigner.hpp>	// (designide)
-#include <VCLEditors.hpp>	// (designide)
-#include <Vcl.Grids.hpp>	// (vcl)
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <SynEditReg.hpp>	// Pascal unit
+#include <SynEditPropertyReg.hpp>	// Pascal unit
+#include <SynHighlighterManager.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <System.Internal.ExcUtils.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.VarUtils.hpp>	// Pascal unit
+#include <System.Variants.hpp>	// Pascal unit
+#include <System.AnsiStrings.hpp>	// Pascal unit
+#include <System.Math.hpp>	// Pascal unit
+#include <System.TimeSpan.hpp>	// Pascal unit
+#include <System.SyncObjs.hpp>	// Pascal unit
+#include <System.Generics.Defaults.hpp>	// Pascal unit
+#include <System.Rtti.hpp>	// Pascal unit
+#include <System.TypInfo.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.DateUtils.hpp>	// Pascal unit
+#include <System.IOUtils.hpp>	// Pascal unit
+#include <System.Win.Registry.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <System.Actions.hpp>	// Pascal unit
+#include <Vcl.ActnList.hpp>	// Pascal unit
+#include <System.HelpIntfs.hpp>	// Pascal unit
+#include <Winapi.UxTheme.hpp>	// Pascal unit
+#include <Vcl.GraphUtil.hpp>	// Pascal unit
+#include <Vcl.StdCtrls.hpp>	// Pascal unit
+#include <Winapi.ShellAPI.hpp>	// Pascal unit
+#include <Vcl.Printers.hpp>	// Pascal unit
+#include <Vcl.Clipbrd.hpp>	// Pascal unit
+#include <Vcl.ComCtrls.hpp>	// Pascal unit
+#include <Vcl.Dialogs.hpp>	// Pascal unit
+#include <Vcl.ExtCtrls.hpp>	// Pascal unit
+#include <Vcl.Themes.hpp>	// Pascal unit
+#include <Winapi.FlatSB.hpp>	// Pascal unit
+#include <Vcl.Forms.hpp>	// Pascal unit
+#include <Vcl.Menus.hpp>	// Pascal unit
+#include <System.Win.ComObj.hpp>	// Pascal unit
+#include <Vcl.Controls.hpp>	// Pascal unit
+#include <SynEditMiscClasses.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynRegExpr.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <SynTextDrawer.hpp>	// Pascal unit
+#include <SynEditKeyCmds.hpp>	// Pascal unit
+#include <SynEdit.hpp>	// Pascal unit
+#include <Vcl.Buttons.hpp>	// Pascal unit
+#include <Data.SqlTimSt.hpp>	// Pascal unit
+#include <Data.FmtBcd.hpp>	// Pascal unit
+#include <Data.DB.hpp>	// Pascal unit
+#include <Vcl.DBLogDlg.hpp>	// Pascal unit
+#include <Vcl.DBPWDlg.hpp>	// Pascal unit
+#include <Vcl.DBCtrls.hpp>	// Pascal unit
+#include <SynEditExport.hpp>	// Pascal unit
+#include <SynExportHTML.hpp>	// Pascal unit
+#include <SynExportRTF.hpp>	// Pascal unit
+#include <Vcl.CheckLst.hpp>	// Pascal unit
+#include <SynHighlighterADSP21xx.hpp>	// Pascal unit
+#include <SynHighlighterAsm.hpp>	// Pascal unit
+#include <JsonDataObjects.hpp>	// Pascal unit
+#include <SynHighlighterAsmMASM.hpp>	// Pascal unit
+#include <SynHighlighterAWK.hpp>	// Pascal unit
+#include <SynHighlighterBaan.hpp>	// Pascal unit
+#include <SynHighlighterBat.hpp>	// Pascal unit
+#include <SynHighlighterCAC.hpp>	// Pascal unit
+#include <SynHighlighterCache.hpp>	// Pascal unit
+#include <SynHighlighterCobol.hpp>	// Pascal unit
+#include <SynHighlighterCpp.hpp>	// Pascal unit
+#include <SynHighlighterCS.hpp>	// Pascal unit
+#include <SynHighlighterCSS.hpp>	// Pascal unit
+#include <SynHighlighterDfm.hpp>	// Pascal unit
+#include <SynHighlighterDml.hpp>	// Pascal unit
+#include <SynHighlighterDOT.hpp>	// Pascal unit
+#include <SynHighlighterDWS.hpp>	// Pascal unit
+#include <SynHighlighterEiffel.hpp>	// Pascal unit
+#include <SynHighlighterFortran.hpp>	// Pascal unit
+#include <SynHighlighterFoxpro.hpp>	// Pascal unit
+#include <SynHighlighterGalaxy.hpp>	// Pascal unit
+#include <SynHighlighterGeneral.hpp>	// Pascal unit
+#include <SynHighlighterHaskell.hpp>	// Pascal unit
+#include <SynHighlighterHC11.hpp>	// Pascal unit
+#include <SynHighlighterHP48.hpp>	// Pascal unit
+#include <SynHighlighterHtml.hpp>	// Pascal unit
+#include <SynHighlighterIni.hpp>	// Pascal unit
+#include <SynHighlighterInno.hpp>	// Pascal unit
+#include <SynHighlighterJava.hpp>	// Pascal unit
+#include <SynHighlighterJScript.hpp>	// Pascal unit
+#include <SynHighlighterJSON.hpp>	// Pascal unit
+#include <SynHighlighterKix.hpp>	// Pascal unit
+#include <SynHighlighterModelica.hpp>	// Pascal unit
+#include <SynHighlighterM3.hpp>	// Pascal unit
+#include <SynHighlighterPas.hpp>	// Pascal unit
+#include <SynHighlighterPerl.hpp>	// Pascal unit
+#include <SynHighlighterPHP.hpp>	// Pascal unit
+#include <SynHighlighterProgress.hpp>	// Pascal unit
+#include <SynHighlighterPython.hpp>	// Pascal unit
+#include <SynHighlighterRC.hpp>	// Pascal unit
+#include <SynHighlighterRuby.hpp>	// Pascal unit
+#include <SynHighlighterSml.hpp>	// Pascal unit
+#include <SynHighlighterSQL.hpp>	// Pascal unit
+#include <SynHighlighterTclTk.hpp>	// Pascal unit
+#include <SynHighlighterTeX.hpp>	// Pascal unit
+#include <SynHighlighterUNIXShellScript.hpp>	// Pascal unit
+#include <SynHighlighterURI.hpp>	// Pascal unit
+#include <SynHighlighterVB.hpp>	// Pascal unit
+#include <SynHighlighterVBScript.hpp>	// Pascal unit
+#include <SynHighlighterVrml97.hpp>	// Pascal unit
+#include <SynHighlighterGWS.hpp>	// Pascal unit
+#include <SynHighlighterCPM.hpp>	// Pascal unit
+#include <SynHighlighterSDD.hpp>	// Pascal unit
+#include <SynHighlighterXML.hpp>	// Pascal unit
+#include <SynHighlighterMsg.hpp>	// Pascal unit
+#include <SynHighlighterIDL.hpp>	// Pascal unit
+#include <SynHighlighterUnreal.hpp>	// Pascal unit
+#include <SynHighlighterST.hpp>	// Pascal unit
+#include <SynHighlighterLDraw.hpp>	// Pascal unit
+#include <SynURIOpener.hpp>	// Pascal unit
+#include <IDEMessages.hpp>	// Pascal unit
+#include <Vcl.CaptionedDockTree.hpp>	// Pascal unit
+#include <Vcl.DockTabSet.hpp>	// Pascal unit
+#include <PercentageDockTree.hpp>	// Pascal unit
+#include <Vcl.ExtDlgs.hpp>	// Pascal unit
+#include <Winapi.Mapi.hpp>	// Pascal unit
+#include <Vcl.ExtActns.hpp>	// Pascal unit
+#include <Vcl.ActnMenus.hpp>	// Pascal unit
+#include <Vcl.ActnMan.hpp>	// Pascal unit
+#include <Vcl.PlatformDefaultStyleActnCtrls.hpp>	// Pascal unit
+#include <BaseDock.hpp>	// Pascal unit
+#include <DeskUtil.hpp>	// Pascal unit
+#include <DeskForm.hpp>	// Pascal unit
+#include <DockForm.hpp>	// Pascal unit
+#include <Xml.Win.msxmldom.hpp>	// Pascal unit
+#include <Xml.Xmldom.hpp>	// Pascal unit
+#include <ToolsAPI.hpp>	// Pascal unit
+#include <Proxies.hpp>	// Pascal unit
+#include <DesignEditors.hpp>	// Pascal unit
+#include <Vcl.AxCtrls.hpp>	// Pascal unit
+#include <Vcl.AppEvnts.hpp>	// Pascal unit
+#include <TreeIntf.hpp>	// Pascal unit
+#include <TopLevels.hpp>	// Pascal unit
+#include <StFilSys.hpp>	// Pascal unit
+#include <IDEHelp.hpp>	// Pascal unit
+#include <ComponentDesigner.hpp>	// Pascal unit
+#include <VCLEditors.hpp>	// Pascal unit
+#include <Vcl.Grids.hpp>	// Pascal unit
+#include <SynColors.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditdd
 {
-//-- forward type declarations -----------------------------------------------
 //-- type declarations -------------------------------------------------------
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Syneditdd */

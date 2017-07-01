@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterPython.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterPython.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlighterpythonHPP
 #define SynhighlighterpythonHPP
@@ -12,26 +12,26 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynEditTypes.hpp>
-#include <SynUnicode.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlighterpython
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynPythonSyn;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM TtkTokenKind : unsigned char { tkComment, tkIdentifier, tkKey, tkNull, tkNumber, tkSpace, tkString, tkSymbol, tkNonKeyword, tkTrippleQuotedString, tkSystemDefined, tkHex, tkOct, tkFloat, tkUnknown };
 
 enum DECLSPEC_DENUM TRangeState : unsigned char { rsANil, rsComment, rsUnKnown, rsMultilineString, rsMultilineString2, rsMultilineString3 };
 
+class DELPHICLASS TSynPythonSyn;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynPythonSyn : public Synedithighlighter::TSynCustomHighlighter
 {
 	typedef Synedithighlighter::TSynCustomHighlighter inherited;
@@ -112,9 +112,10 @@ __published:
 	__property Synedithighlighter::TSynHighlighterAttributes* ErrorAttri = {read=fErrorAttri, write=fErrorAttri};
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
-#define ALPHA_CHARS (System::Set<char, _DELPHI_SET_CHAR(0), _DELPHI_SET_CHAR(255)>() << '\x41' << '\x42' << '\x43' << '\x44' << '\x45' << '\x46' << '\x47' << '\x48' << '\x49' << '\x4a' << '\x4b' << '\x4c' << '\x4d' << '\x4e' << '\x4f' << '\x50' << '\x51' << '\x52' << '\x53' << '\x54' << '\x55' << '\x56' << '\x57' << '\x58' << '\x59' << '\x5a' << '\x5f' << '\x61' << '\x62' << '\x63' << '\x64' << '\x65' << '\x66' << '\x67' << '\x68' << '\x69' << '\x6a' << '\x6b' << '\x6c' << '\x6d' << '\x6e' << '\x6f' << '\x70' << '\x71' << '\x72' << '\x73' << '\x74' << '\x75' << '\x76' << '\x77' << '\x78' << '\x79' << '\x7a' )
+#define ALPHA_CHARS (System::Set<char, 0, 255> () << '\x41' << '\x42' << '\x43' << '\x44' << '\x45' << '\x46' << '\x47' << '\x48' << '\x49' << '\x4a' << '\x4b' << '\x4c' << '\x4d' << '\x4e' << '\x4f' << '\x50' << '\x51' << '\x52' << '\x53' << '\x54' << '\x55' << '\x56' << '\x57' << '\x58' << '\x59' << '\x5a' << '\x5f' << '\x61' << '\x62' << '\x63' << '\x64' << '\x65' << '\x66' << '\x67' << '\x68' << '\x69' << '\x6a' << '\x6b' << '\x6c' << '\x6d' << '\x6e' << '\x6f' << '\x70' << '\x71' << '\x72' << '\x73' << '\x74' << '\x75' << '\x76' << '\x77' << '\x78' << '\x79' << '\x7a' )
 }	/* namespace Synhighlighterpython */
 #if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_SYNHIGHLIGHTERPYTHON)
 using namespace Synhighlighterpython;

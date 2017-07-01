@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterDWS.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterDWS.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlighterdwsHPP
 #define SynhighlighterdwsHPP
@@ -12,23 +12,20 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <Vcl.Graphics.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditHighlighter.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
-#include <System.Character.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.Character.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlighterdws
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TAnsiStringList;
-class DELPHICLASS TSynDWSSyn;
 //-- type declarations -------------------------------------------------------
 enum DECLSPEC_DENUM TtkTokenKind : unsigned char { tkAsm, tkComment, tkIdentifier, tkKey, tkNull, tkNumber, tkSpace, tkString, tkSymbol, tkUnknown, tkFloat, tkHex, tkDirec, tkChar };
 
@@ -38,6 +35,7 @@ typedef TtkTokenKind __fastcall (__closure *TIdentFuncTableFunc)(void);
 
 typedef TIdentFuncTableFunc *PIdentFuncTableFunc;
 
+class DELPHICLASS TAnsiStringList;
 class PASCALIMPLEMENTATION TAnsiStringList : public System::Classes::TStringList
 {
 	typedef System::Classes::TStringList inherited;
@@ -47,14 +45,12 @@ __published:
 public:
 	/* TStringList.Create */ inline __fastcall TAnsiStringList(void)/* overload */ : System::Classes::TStringList() { }
 	/* TStringList.Create */ inline __fastcall TAnsiStringList(bool OwnsObjects)/* overload */ : System::Classes::TStringList(OwnsObjects) { }
-	/* TStringList.Create */ inline __fastcall TAnsiStringList(System::WideChar QuoteChar, System::WideChar Delimiter)/* overload */ : System::Classes::TStringList(QuoteChar, Delimiter) { }
-	/* TStringList.Create */ inline __fastcall TAnsiStringList(System::WideChar QuoteChar, System::WideChar Delimiter, System::Classes::TStringsOptions Options)/* overload */ : System::Classes::TStringList(QuoteChar, Delimiter, Options) { }
-	/* TStringList.Create */ inline __fastcall TAnsiStringList(System::Types::TDuplicates Duplicates, bool Sorted, bool CaseSensitive)/* overload */ : System::Classes::TStringList(Duplicates, Sorted, CaseSensitive) { }
 	/* TStringList.Destroy */ inline __fastcall virtual ~TAnsiStringList(void) { }
 	
 };
 
 
+class DELPHICLASS TSynDWSSyn;
 class PASCALIMPLEMENTATION TSynDWSSyn : public Synedithighlighter::TSynCustomHighlighter
 {
 	typedef Synedithighlighter::TSynCustomHighlighter inherited;

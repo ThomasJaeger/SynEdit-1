@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEditSearch.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEditSearch.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditsearchHPP
 #define SyneditsearchHPP
@@ -12,20 +12,20 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditMiscClasses.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditMiscClasses.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Syneditsearch
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynEditSearch;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynEditSearch;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditSearch : public Syneditmiscclasses::TSynEditSearchCustom
 {
 	typedef Syneditmiscclasses::TSynEditSearchCustom inherited;
@@ -75,6 +75,7 @@ public:
 	__property bool Whole = {read=fWhole, write=fWhole, nodefault};
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Syneditsearch */

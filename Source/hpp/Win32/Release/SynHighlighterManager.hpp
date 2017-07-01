@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterManager.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterManager.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlightermanagerHPP
 #define SynhighlightermanagerHPP
@@ -12,17 +12,17 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlightermanager
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TSynHighlighterManager;
 //-- type declarations -------------------------------------------------------
+class DELPHICLASS TSynHighlighterManager;
+#pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynHighlighterManager : public System::Classes::TComponent
 {
 	typedef System::Classes::TComponent inherited;
@@ -34,6 +34,7 @@ public:
 	
 };
 
+#pragma pack(pop)
 
 //-- var, const, procedure ---------------------------------------------------
 }	/* namespace Synhighlightermanager */

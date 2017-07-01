@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynHighlighterMulti.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynHighlighterMulti.pas' rev: 25.00 (Windows)
 
 #ifndef SynhighlightermultiHPP
 #define SynhighlightermultiHPP
@@ -12,26 +12,22 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Winapi.Windows.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynUnicode.hpp>
-#include <System.Classes.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synhighlightermulti
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS TScheme;
-class DELPHICLASS TSchemes;
-class DELPHICLASS TMarker;
-class DELPHICLASS TSynMultiSyn;
 //-- type declarations -------------------------------------------------------
 typedef void __fastcall (__closure *TOnCheckMarker)(System::TObject* Sender, int &StartPos, int &MarkerLen, System::UnicodeString &MarkerText, int Line, const System::UnicodeString LineStr);
 
+class DELPHICLASS TScheme;
 class PASCALIMPLEMENTATION TScheme : public System::Classes::TCollectionItem
 {
 	typedef System::Classes::TCollectionItem inherited;
@@ -76,13 +72,15 @@ __published:
 
 typedef System::TMetaClass* TgmSchemeClass;
 
+class DELPHICLASS TSchemes;
+class DELPHICLASS TSynMultiSyn;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSchemes : public System::Classes::TCollection
 {
 	typedef System::Classes::TCollection inherited;
 	
 public:
-	TScheme* operator[](int aIndex) { return this->Items[aIndex]; }
+	TScheme* operator[](int aIndex) { return Items[aIndex]; }
 	
 private:
 	TSynMultiSyn* fOwner;
@@ -103,6 +101,7 @@ public:
 
 #pragma pack(pop)
 
+class DELPHICLASS TMarker;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TMarker : public System::TObject
 {

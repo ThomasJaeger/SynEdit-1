@@ -1,8 +1,8 @@
-﻿// CodeGear C++Builder
-// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// CodeGear C++Builder
+// Copyright (c) 1995, 2013 by Embarcadero Technologies, Inc.
 // All rights reserved
 
-// (DO NOT EDIT: machine generated header) 'SynEdit.pas' rev: 31.00 (Windows)
+// (DO NOT EDIT: machine generated header) 'SynEdit.pas' rev: 25.00 (Windows)
 
 #ifndef SyneditHPP
 #define SyneditHPP
@@ -12,52 +12,42 @@
 #pragma option -w-      // All warnings off
 #pragma option -Vx      // Zero-length empty class member 
 #pragma pack(push,8)
-#include <System.hpp>
-#include <SysInit.hpp>
-#include <Vcl.Controls.hpp>
-#include <System.Contnrs.hpp>
-#include <Vcl.Graphics.hpp>
-#include <Vcl.Forms.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.ExtCtrls.hpp>
-#include <Winapi.Windows.hpp>
-#include <Winapi.Messages.hpp>
-#include <Vcl.StdActns.hpp>
-#include <Vcl.Dialogs.hpp>
-#include <Vcl.Themes.hpp>
-#include <System.UITypes.hpp>
-#include <SynUnicode.hpp>
-#include <Winapi.Imm.hpp>
-#include <SynTextDrawer.hpp>
-#include <SynEditTypes.hpp>
-#include <SynEditKeyConst.hpp>
-#include <SynEditMiscProcs.hpp>
-#include <SynEditMiscClasses.hpp>
-#include <SynEditTextBuffer.hpp>
-#include <SynEditKeyCmds.hpp>
-#include <SynEditHighlighter.hpp>
-#include <SynEditKbdHandler.hpp>
-#include <System.WideStrUtils.hpp>
-#include <System.Math.hpp>
-#include <System.SysUtils.hpp>
-#include <System.Classes.hpp>
-#include <System.Types.hpp>
-#include <Vcl.Menus.hpp>
+#include <System.hpp>	// Pascal unit
+#include <SysInit.hpp>	// Pascal unit
+#include <Vcl.Controls.hpp>	// Pascal unit
+#include <System.Contnrs.hpp>	// Pascal unit
+#include <Vcl.Graphics.hpp>	// Pascal unit
+#include <Vcl.Forms.hpp>	// Pascal unit
+#include <Vcl.StdCtrls.hpp>	// Pascal unit
+#include <Vcl.ExtCtrls.hpp>	// Pascal unit
+#include <Winapi.Windows.hpp>	// Pascal unit
+#include <Winapi.Messages.hpp>	// Pascal unit
+#include <Vcl.StdActns.hpp>	// Pascal unit
+#include <Vcl.Dialogs.hpp>	// Pascal unit
+#include <Vcl.Themes.hpp>	// Pascal unit
+#include <System.UITypes.hpp>	// Pascal unit
+#include <SynUnicode.hpp>	// Pascal unit
+#include <Winapi.Imm.hpp>	// Pascal unit
+#include <SynTextDrawer.hpp>	// Pascal unit
+#include <SynEditTypes.hpp>	// Pascal unit
+#include <SynEditKeyConst.hpp>	// Pascal unit
+#include <SynEditMiscProcs.hpp>	// Pascal unit
+#include <SynEditMiscClasses.hpp>	// Pascal unit
+#include <SynEditTextBuffer.hpp>	// Pascal unit
+#include <SynEditKeyCmds.hpp>	// Pascal unit
+#include <SynEditHighlighter.hpp>	// Pascal unit
+#include <SynEditKbdHandler.hpp>	// Pascal unit
+#include <System.WideStrUtils.hpp>	// Pascal unit
+#include <System.Math.hpp>	// Pascal unit
+#include <System.SysUtils.hpp>	// Pascal unit
+#include <System.Classes.hpp>	// Pascal unit
+#include <System.Types.hpp>	// Pascal unit
+#include <Vcl.Menus.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 
 namespace Synedit
 {
-//-- forward type declarations -----------------------------------------------
-class DELPHICLASS ESynEditError;
-struct TCreateParamsW;
-class DELPHICLASS TSynEditMark;
-class DELPHICLASS TSynEditMarkList;
-__interface ISynEditBufferPlugin;
-typedef System::DelphiInterface<ISynEditBufferPlugin> _di_ISynEditBufferPlugin;
-class DELPHICLASS TSynEditPlugin;
-class DELPHICLASS TCustomSynEdit;
-class DELPHICLASS TSynEdit;
 //-- type declarations -------------------------------------------------------
 typedef Synedittypes::TBufferCoord TBufferCoord;
 
@@ -67,6 +57,7 @@ typedef Vcl::Forms::TFormBorderStyle TSynBorderStyle;
 
 enum DECLSPEC_DENUM TSynReplaceAction : unsigned char { raCancel, raSkip, raReplace, raReplaceAll };
 
+class DELPHICLASS ESynEditError;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION ESynEditError : public Synedittypes::ESynError
 {
@@ -74,17 +65,17 @@ class PASCALIMPLEMENTATION ESynEditError : public Synedittypes::ESynError
 	
 public:
 	/* Exception.Create */ inline __fastcall ESynEditError(const System::UnicodeString Msg) : Synedittypes::ESynError(Msg) { }
-	/* Exception.CreateFmt */ inline __fastcall ESynEditError(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High) : Synedittypes::ESynError(Msg, Args, Args_High) { }
+	/* Exception.CreateFmt */ inline __fastcall ESynEditError(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size) : Synedittypes::ESynError(Msg, Args, Args_Size) { }
 	/* Exception.CreateRes */ inline __fastcall ESynEditError(NativeUInt Ident)/* overload */ : Synedittypes::ESynError(Ident) { }
 	/* Exception.CreateRes */ inline __fastcall ESynEditError(System::PResStringRec ResStringRec)/* overload */ : Synedittypes::ESynError(ResStringRec) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynEditError(NativeUInt Ident, const System::TVarRec *Args, const int Args_High)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_High) { }
-	/* Exception.CreateResFmt */ inline __fastcall ESynEditError(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_High) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynEditError(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_Size) { }
+	/* Exception.CreateResFmt */ inline __fastcall ESynEditError(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_Size) { }
 	/* Exception.CreateHelp */ inline __fastcall ESynEditError(const System::UnicodeString Msg, int AHelpContext) : Synedittypes::ESynError(Msg, AHelpContext) { }
-	/* Exception.CreateFmtHelp */ inline __fastcall ESynEditError(const System::UnicodeString Msg, const System::TVarRec *Args, const int Args_High, int AHelpContext) : Synedittypes::ESynError(Msg, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateFmtHelp */ inline __fastcall ESynEditError(const System::UnicodeString Msg, System::TVarRec const *Args, const int Args_Size, int AHelpContext) : Synedittypes::ESynError(Msg, Args, Args_Size, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynEditError(NativeUInt Ident, int AHelpContext)/* overload */ : Synedittypes::ESynError(Ident, AHelpContext) { }
 	/* Exception.CreateResHelp */ inline __fastcall ESynEditError(System::PResStringRec ResStringRec, int AHelpContext)/* overload */ : Synedittypes::ESynError(ResStringRec, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditError(System::PResStringRec ResStringRec, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_High, AHelpContext) { }
-	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditError(NativeUInt Ident, const System::TVarRec *Args, const int Args_High, int AHelpContext)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_High, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditError(System::PResStringRec ResStringRec, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : Synedittypes::ESynError(ResStringRec, Args, Args_Size, AHelpContext) { }
+	/* Exception.CreateResFmtHelp */ inline __fastcall ESynEditError(NativeUInt Ident, System::TVarRec const *Args, const int Args_Size, int AHelpContext)/* overload */ : Synedittypes::ESynError(Ident, Args, Args_Size, AHelpContext) { }
 	/* Exception.Destroy */ inline __fastcall virtual ~ESynEditError(void) { }
 	
 };
@@ -117,13 +108,13 @@ enum DECLSPEC_DENUM TSynEditCaretType : unsigned char { ctVerticalLine, ctHorizo
 
 enum DECLSPEC_DENUM TSynStateFlag : unsigned char { sfCaretChanged, sfScrollbarChanged, sfLinesChanging, sfIgnoreNextChar, sfCaretVisible, sfDblClicked, sfPossibleGutterClick, sfWaitForDragging, sfInsideRedo, sfGutterDragging };
 
-typedef System::Set<TSynStateFlag, TSynStateFlag::sfCaretChanged, TSynStateFlag::sfGutterDragging> TSynStateFlags;
+typedef System::Set<TSynStateFlag, TSynStateFlag::sfCaretChanged, TSynStateFlag::sfGutterDragging>  TSynStateFlags;
 
 enum DECLSPEC_DENUM TScrollHintFormat : unsigned char { shfTopLineOnly, shfTopToBottom };
 
 enum DECLSPEC_DENUM TSynEditorOption : unsigned char { eoAltSetsColumnMode, eoAutoIndent, eoAutoSizeMaxScrollWidth, eoDisableScrollArrows, eoDragDropEditing, eoDropFiles, eoEnhanceHomeKey, eoEnhanceEndKey, eoGroupUndo, eoHalfPageScroll, eoHideShowScrollbars, eoKeepCaretX, eoNoCaret, eoNoSelection, eoRightMouseMovesCursor, eoScrollByOneLess, eoScrollHintFollows, eoScrollPastEof, eoScrollPastEol, eoShowScrollHint, eoShowSpecialChars, eoSmartTabDelete, eoSmartTabs, eoSpecialLineDefaultFg, eoTabIndent, eoTabsToSpaces, eoTrimTrailingSpaces };
 
-typedef System::Set<TSynEditorOption, TSynEditorOption::eoAltSetsColumnMode, TSynEditorOption::eoTrimTrailingSpaces> TSynEditorOptions;
+typedef System::Set<TSynEditorOption, TSynEditorOption::eoAltSetsColumnMode, TSynEditorOption::eoTrimTrailingSpaces>  TSynEditorOptions;
 
 enum DECLSPEC_DENUM TSynFontSmoothMethod : unsigned char { fsmNone, fsmAntiAlias, fsmClearType };
 
@@ -147,7 +138,7 @@ public:
 
 enum DECLSPEC_DENUM TSynStatusChange : unsigned char { scAll, scCaretX, scCaretY, scLeftChar, scTopLine, scInsertMode, scModified, scSelection, scReadOnly };
 
-typedef System::Set<TSynStatusChange, TSynStatusChange::scAll, TSynStatusChange::scReadOnly> TSynStatusChanges;
+typedef System::Set<TSynStatusChange, TSynStatusChange::scAll, TSynStatusChange::scReadOnly>  TSynStatusChanges;
 
 typedef void __fastcall (__closure *TContextHelpEvent)(System::TObject* Sender, System::UnicodeString word);
 
@@ -155,6 +146,8 @@ typedef void __fastcall (__closure *TStatusChangeEvent)(System::TObject* Sender,
 
 typedef void __fastcall (__closure *TMouseCursorEvent)(System::TObject* Sender, const Synedittypes::TBufferCoord &aLineCharPos, System::Uitypes::TCursor &aCursor);
 
+class DELPHICLASS TSynEditMark;
+class DELPHICLASS TCustomSynEdit;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditMark : public System::TObject
 {
@@ -197,12 +190,13 @@ typedef void __fastcall (__closure *TPlaceMarkEvent)(System::TObject* Sender, TS
 
 typedef System::StaticArray<TSynEditMark*, 16> TSynEditMarks;
 
+class DELPHICLASS TSynEditMarkList;
 class PASCALIMPLEMENTATION TSynEditMarkList : public System::Contnrs::TObjectList
 {
 	typedef System::Contnrs::TObjectList inherited;
 	
 public:
-	TSynEditMark* operator[](int Index) { return this->Items[Index]; }
+	TSynEditMark* operator[](int Index) { return Items[Index]; }
 	
 protected:
 	TCustomSynEdit* fEdit;
@@ -231,8 +225,12 @@ public:
 
 typedef void __fastcall (__closure *TGutterClickEvent)(System::TObject* Sender, System::Uitypes::TMouseButton Button, int X, int Y, int Line, TSynEditMark* Mark);
 
+__interface ISynEditBufferPlugin;
+typedef System::DelphiInterface<ISynEditBufferPlugin> _di_ISynEditBufferPlugin;
 __interface ISynEditBufferPlugin  : public System::IInterface 
 {
+	
+public:
 	virtual Synedittypes::TDisplayCoord __fastcall BufferToDisplayPos(const Synedittypes::TBufferCoord &aPos) = 0 ;
 	virtual Synedittypes::TBufferCoord __fastcall DisplayToBufferPos(const Synedittypes::TDisplayCoord &aPos) = 0 ;
 	virtual int __fastcall RowCount(void) = 0 ;
@@ -244,6 +242,7 @@ __interface ISynEditBufferPlugin  : public System::IInterface
 	virtual void __fastcall Reset(void) = 0 ;
 };
 
+class DELPHICLASS TSynEditPlugin;
 #pragma pack(push,4)
 class PASCALIMPLEMENTATION TSynEditPlugin : public System::TObject
 {
@@ -512,7 +511,7 @@ private:
 	void __fastcall DoSearchFindNextExecute(Vcl::Stdactns::TSearchFindNext* Action);
 	void __fastcall FindDialogFindFirst(System::TObject* Sender);
 	void __fastcall FindDialogFind(System::TObject* Sender);
-	System::LongBool __fastcall SearchByFindDialog(Vcl::Dialogs::TFindDialog* FindDialog);
+	BOOL __fastcall SearchByFindDialog(Vcl::Dialogs::TFindDialog* FindDialog);
 	void __fastcall FindDialogClose(System::TObject* Sender);
 	
 protected:
@@ -809,6 +808,7 @@ public:
 };
 
 
+class DELPHICLASS TSynEdit;
 class PASCALIMPLEMENTATION TSynEdit : public TCustomSynEdit
 {
 	typedef TCustomSynEdit inherited;
@@ -917,7 +917,7 @@ static const System::Word MAX_SCROLL = System::Word(0x7fff);
 static const System::Int8 MAX_MARKS = System::Int8(0x10);
 #define SYNEDIT_CLIPBOARD_FORMAT L"SynEdit Control Block Type"
 extern DELPHI_PACKAGE unsigned SynEditClipboardFormat;
-#define SYNEDIT_DEFAULT_OPTIONS (System::Set<TSynEditorOption, TSynEditorOption::eoAltSetsColumnMode, TSynEditorOption::eoTrimTrailingSpaces>() << TSynEditorOption::eoAutoIndent << TSynEditorOption::eoDragDropEditing << TSynEditorOption::eoEnhanceEndKey << TSynEditorOption::eoGroupUndo << TSynEditorOption::eoScrollPastEol << TSynEditorOption::eoShowScrollHint << TSynEditorOption::eoSmartTabDelete << TSynEditorOption::eoSmartTabs << TSynEditorOption::eoTabsToSpaces )
+#define SYNEDIT_DEFAULT_OPTIONS (System::Set<TSynEditorOption, TSynEditorOption::eoAltSetsColumnMode, TSynEditorOption::eoTrimTrailingSpaces> () << TSynEditorOption::eoAutoIndent << TSynEditorOption::eoDragDropEditing << TSynEditorOption::eoEnhanceEndKey << TSynEditorOption::eoGroupUndo << TSynEditorOption::eoScrollPastEol << TSynEditorOption::eoShowScrollHint << TSynEditorOption::eoSmartTabDelete << TSynEditorOption::eoSmartTabs << TSynEditorOption::eoTabsToSpaces )
 }	/* namespace Synedit */
 #if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_SYNEDIT)
 using namespace Synedit;
