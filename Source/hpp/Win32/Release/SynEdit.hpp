@@ -648,6 +648,7 @@ public:
 	virtual bool __fastcall IsWhiteChar(System::WideChar AChar);
 	virtual bool __fastcall IsWordBreakChar(System::WideChar AChar);
 	void __fastcall InsertBlock(const Synedittypes::TBufferCoord &BB, const Synedittypes::TBufferCoord &BE, System::WideChar * ChangeStr, bool AddToUndoList);
+	void __fastcall InsertLine(const Synedittypes::TBufferCoord &BB, const Synedittypes::TBufferCoord &BE, System::WideChar * ChangeStr, bool AddToUndoList);
 	Synedittypes::TBufferBlock __fastcall UnifiedSelection(void);
 	void __fastcall DoBlockIndent(void);
 	void __fastcall DoBlockUnindent(void);

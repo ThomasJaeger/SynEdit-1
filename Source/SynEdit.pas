@@ -725,6 +725,7 @@ type
     // Codehunter patch: Make InsertBlock, DoBlockIndent, DoBlockUnindent public
     procedure InsertBlock(const BB, BE: TBufferCoord; ChangeStr: PWideChar; AddToUndoList: Boolean);
     // Codehunter patch: Added UnifiedSelection
+    procedure InsertLine(const BB, BE: TBufferCoord; ChangeStr: PWideChar; AddToUndoList: Boolean);
     function UnifiedSelection: TBufferBlock;
     procedure DoBlockIndent;
     procedure DoBlockUnindent;
@@ -5084,6 +5085,16 @@ begin
   SetCaretAndSelection(BB, BB, BE);
   ActiveSelectionMode := smColumn;
   SetSelTextPrimitiveEx(smColumn, ChangeStr, AddToUndoList);
+  StatusChanged([scSelection]);
+end;
+
+procedure TCustomSynEdit.InsertLine(const BB, BE: TBufferCoord; ChangeStr: PWideChar;
+  AddToUndoList: Boolean);
+// used by BlockIndent and Redo
+begin
+  SetCaretAndSelection(BB, BB, BE);
+  ActiveSelectionMode := smLine;
+  SetSelTextPrimitiveEx(smLine, ChangeStr, AddToUndoList);
   StatusChanged([scSelection]);
 end;
 
