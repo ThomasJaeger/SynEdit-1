@@ -129,8 +129,8 @@ type
     procedure SetURIAttri(const Value: TSynHighlighterAttributes);
     procedure SetVisitedURIAttri(const Value: TSynHighlighterAttributes);
 
-    function HashKey(Str: PWideChar): Cardinal;
-//    function HashKey(Str: PWideChar): Integer;
+    //function HashKey(Str: PWideChar): Cardinal;
+    function HashKey(Str: PWideChar): Integer;
     procedure CommentProc;
     procedure CRProc;
     procedure GreaterProc;
@@ -156,7 +156,7 @@ type
   protected
     function GetSampleSource: UnicodeString; override;
     function IsFilterStored: Boolean; override;
-//    function IsCurrentToken(const Token: string): Boolean; override;
+    function IsCurrentToken(const Token: string): Boolean; override;
     procedure SetAlreadyVisitedURIFunc(Value: TAlreadyVisitedURIFunc);
   public
     class function GetLanguageName: string; override;
@@ -174,7 +174,7 @@ type
     procedure SaveFile(fName: string);
     procedure LoadFile(fName: string);
     procedure AssignColors(memo: TSynMemo);
-//    function IsIdentChar(AChar: WideChar): Boolean; override;
+    function IsIdentChar(AChar: WideChar): Boolean; override;
   published
     property CommentAttri: TSynHighlighterAttributes read fCommentAttri write fCommentAttri;
     property IdentifierAttri: TSynHighlighterAttributes read fIdentifierAttri write fIdentifierAttri;
@@ -356,28 +356,28 @@ begin
   fIdentFuncTable[9] := FuncWeb;
 end;
 
-//function TSynAsmMASMSyn.IsCurrentToken(const Token: string): Boolean;
-//var
-//  I: Integer;
-//  Temp: PWideChar;
-//begin
-//  Temp := fMayBeProtocol;
-//  if Length(Token) = fStringLen then
-//  begin
-//    Result := True;
-//    for i := 1 to fStringLen do
-//    begin
-//      if Temp^ <> Token[i] then
-//      begin
-//        Result := False;
-//        break;
-//      end;
-//      inc(Temp);
-//    end;
-//  end
-//  else
-//    Result := False;
-//end;
+function TSynAsmMASMSyn.IsCurrentToken(const Token: string): Boolean;
+var
+  I: Integer;
+  Temp: PWideChar;
+begin
+  Temp := fMayBeProtocol;
+  if Length(Token) = fStringLen then
+  begin
+    Result := True;
+    for i := 1 to fStringLen do
+    begin
+      if Temp^ <> Token[i] then
+      begin
+        Result := False;
+        break;
+      end;
+      inc(Temp);
+    end;
+  end
+  else
+    Result := False;
+end;
 
 function TSynAsmMASMSyn.AltFunc(Key: Integer): TtkTokenKind;
 begin
@@ -424,49 +424,49 @@ begin
   fOperatorKeywords[HashValue] := TSynHashEntry.Create(AKeyword, AKind);
 end;
 
-//{$Q-}
-function TSynAsmMASMSyn.HashKey(Str: PWideChar): Cardinal;
-begin
-  Result := 0;
-  while IsIdentChar(Str^) do
-  begin
-    Result := Result * 197 + Ord(Str^) * 14;
-    inc(Str);
-  end;
-  Result := Result mod 4561;
-  fStringLen := Str - fToIdent;
-end;
-//{$Q+}
-
-//function TSynAsmMASMSyn.HashKey(Str: PWideChar): Integer;
+////{$Q-}
+//function TSynAsmMASMSyn.HashKey(Str: PWideChar): Cardinal;
 //begin
 //  Result := 0;
-//  while CharInSet(Str^, ['A'..'Z', 'a'..'z']) do
+//  while IsIdentChar(Str^) do
 //  begin
-//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+//    Result := Result * 197 + Ord(Str^) * 14;
 //    inc(Str);
 //  end;
-//
-//  if Str^ = ':' then
-//  begin
-//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
-//    inc(Str);
-//  end;
-//
-//  if Str^ = '/' then
-//  begin
-//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
-//    inc(Str);
-//  end;
-//
-//  if Str^ = '/' then
-//  begin
-//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
-//    inc(Str);
-//  end;
-//
-//  fStringLen := Str - fMayBeProtocol;
+//  Result := Result mod 4561;
+//  fStringLen := Str - fToIdent;
 //end;
+////{$Q+}
+
+function TSynAsmMASMSyn.HashKey(Str: PWideChar): Integer;
+begin
+  Result := 0;
+  while CharInSet(Str^, ['A'..'Z', 'a'..'z']) do
+  begin
+    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+    inc(Str);
+  end;
+
+  if Str^ = ':' then
+  begin
+    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+    inc(Str);
+  end;
+
+  if Str^ = '/' then
+  begin
+    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+    inc(Str);
+  end;
+
+  if Str^ = '/' then
+  begin
+    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+    inc(Str);
+  end;
+
+  fStringLen := Str - fMayBeProtocol;
+end;
 
 function TSynAsmMASMSyn.IdentKind(MayBe: PWideChar): TtkTokenKind;
 var
@@ -789,16 +789,15 @@ begin
     #39: SingleQuoteStringProc;
     '>': GreaterProc;
     '<': LowerProc;
-//    '/': SlashProc;
-//    '\': IncludeProc;
+    '/': SlashProc;
+    '\': IncludeProc;
     //'A'..'Z', 'a'..'z', '_': IdentProc;
     'A'..'Z', 'a'..'z', '_', '.', '?', '[', ']': IdentProc;   // THJ
-    //'A'..'Z', 'a'..'z': ProtocolProc;   // THJ
     '0'..'9': NumberProc;
     #1..#9, #11, #12, #14..#32: SpaceProc;
-    ';': CommentProc;
+    '#', ';': CommentProc;
     //'.', ':', '&', '{', '}', '=', '^', '-', '+', '(', ')', '*': SymbolProc;
-    ':', '&', '{', '}', '^', '-', '+', '(', ')', '*', '/', '\': SymbolProc;
+    ':', '&', '{', '}', '^', '-', '+', '(', ')', '*': SymbolProc;
     else
       UnknownProc;
   end;
@@ -915,10 +914,10 @@ begin
   Result := SYNS_FriendlyLangMASM;
 end;
 
-//function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
-//begin
-//  Result := SynIsCharAlphaNumeric(AChar);
-//end;
+function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
+begin
+  Result := SynIsCharAlphaNumeric(AChar);
+end;
 
 procedure TSynAsmMASMSyn.SetAlreadyVisitedURIFunc(Value: TAlreadyVisitedURIFunc);
 begin
@@ -1169,8 +1168,7 @@ end;
 function TSynAsmMASMSyn.IsMark(AChar: WideChar): Boolean;
 begin
   case AChar of
-//    '-', '_', '.', '!', '~', '*', '''', '(' , ')':
-    '-', '_', '!', '~', '*', '''', '(' , ')':   // THJ
+    '-', '_', '.', '!', '~', '*', '''', '(' , ')':
       Result := True;
     else
       Result := False;
@@ -1180,8 +1178,7 @@ end;
 function TSynAsmMASMSyn.IsReserved(AChar: WideChar): Boolean;
 begin
   case AChar of
-//    ';', '/', '?', ':', '@', '&', '=', '+', '$', ',', '%', '#':
-    ';', '/', ':', '@', '&', '=', '+', '$', ',', '%', '#':  // THJ
+    ';', '/', '?', ':', '@', '&', '=', '+', '$', ',', '%', '#':
       Result := True;
     else
       Result := False;
@@ -1207,8 +1204,7 @@ end;
 function TSynAsmMASMSyn.IsEMailAddressChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-//    '.', '_', '-', '@':
-    '@':
+    '.', '_', '-', '@':
       Result := True;
     else
       Result := IsAlphaNum(AChar);
@@ -1217,8 +1213,7 @@ end;
 
 function TSynAsmMASMSyn.IsNeverAtEMailAddressEnd(AChar: WideChar): Boolean;
 begin
-//  Result := (AChar = '.') or (AChar = '@');
-  Result := AChar = '@';
+  Result := (AChar = '.') or (AChar = '@');
 end;
 
 function TSynAsmMASMSyn.IsValidEmailAddress: Boolean;
@@ -1232,13 +1227,13 @@ begin
   while IsEMailAddressChar(fLine[Run]) do
   begin
     if fLine[Run] = '@' then
-      AtPos := Run;
-//    else if fLine[Run] = '.' then
-//      // reject array of dots: "neighbour" dots are not allowed
-//      if (Run = StartPos) or (DotPos >= 0) and (DotPos = Run - 1) then
-//        break
-//      else
-//        DotPos := Run;
+      AtPos := Run
+    else if fLine[Run] = '.' then
+      // reject array of dots: "neighbour" dots are not allowed
+      if (Run = StartPos) or (DotPos >= 0) and (DotPos = Run - 1) then
+        break
+      else
+        DotPos := Run;
     Inc(Run);
   end;
 
@@ -1269,11 +1264,11 @@ begin
   DotPos := -1;
   while IsURIChar(fLine[Run]) do
   begin
-//    if fLine[Run] = '.' then
-//      // reject array of dots: "neighbour" dots are not allowed
-//      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
-//        break
-//      else
+    if fLine[Run] = '.' then
+      // reject array of dots: "neighbour" dots are not allowed
+      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
+        break
+      else
         DotPos := Run;
     inc(Run);
   end;
@@ -1302,25 +1297,23 @@ begin
   SecondDotPos := -1;
   while IsURIChar(fLine[Run]) do
   begin
-//    if fLine[Run] = '.' then
-//      // reject array of dots: "neighbour" dots are not allowed
-//      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
-//        break
-//      else
-//      begin
-//        DotPos := Run;
-//        if SecondDotPos = -2 then SecondDotPos := DotPos;
-//        if SecondDotPos = -1 then SecondDotPos := -2;
-//      end;
+    if fLine[Run] = '.' then
+      // reject array of dots: "neighbour" dots are not allowed
+      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
+        break
+      else
+      begin
+        DotPos := Run;
+        if SecondDotPos = -2 then SecondDotPos := DotPos;
+        if SecondDotPos = -1 then SecondDotPos := -2;
+      end;
     inc(Run);
   end;
 
   while (Run > WWWEndPos) and IsNeverAtEnd(fLine[Run - 1]) do
     dec(Run);
 
-//  Result := (Run > WWWEndPos) and (fLine[WWWEndPos] = '.') and
-//            (SecondDotPos > WWWEndPos + 1) and (SecondDotPos < Run);
-  Result := (Run > WWWEndPos) and
+  Result := (Run > WWWEndPos) and (fLine[WWWEndPos] = '.') and
             (SecondDotPos > WWWEndPos + 1) and (SecondDotPos < Run);
 end;
 

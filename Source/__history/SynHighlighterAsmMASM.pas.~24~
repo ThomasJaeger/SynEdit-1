@@ -174,7 +174,7 @@ type
     procedure SaveFile(fName: string);
     procedure LoadFile(fName: string);
     procedure AssignColors(memo: TSynMemo);
-//    function IsIdentChar(AChar: WideChar): Boolean; override;
+    function IsIdentChar(AChar: WideChar): Boolean; override;
   published
     property CommentAttri: TSynHighlighterAttributes read fCommentAttri write fCommentAttri;
     property IdentifierAttri: TSynHighlighterAttributes read fIdentifierAttri write fIdentifierAttri;
@@ -915,10 +915,10 @@ begin
   Result := SYNS_FriendlyLangMASM;
 end;
 
-//function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
-//begin
-//  Result := SynIsCharAlphaNumeric(AChar);
-//end;
+function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
+begin
+  Result := SynIsCharAlphaNumeric(AChar);
+end;
 
 procedure TSynAsmMASMSyn.SetAlreadyVisitedURIFunc(Value: TAlreadyVisitedURIFunc);
 begin
@@ -1207,8 +1207,7 @@ end;
 function TSynAsmMASMSyn.IsEMailAddressChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-//    '.', '_', '-', '@':
-    '@':
+    '.', '_', '-', '@':
       Result := True;
     else
       Result := IsAlphaNum(AChar);
@@ -1217,8 +1216,7 @@ end;
 
 function TSynAsmMASMSyn.IsNeverAtEMailAddressEnd(AChar: WideChar): Boolean;
 begin
-//  Result := (AChar = '.') or (AChar = '@');
-  Result := AChar = '@';
+  Result := (AChar = '.') or (AChar = '@');
 end;
 
 function TSynAsmMASMSyn.IsValidEmailAddress: Boolean;
@@ -1232,13 +1230,13 @@ begin
   while IsEMailAddressChar(fLine[Run]) do
   begin
     if fLine[Run] = '@' then
-      AtPos := Run;
-//    else if fLine[Run] = '.' then
-//      // reject array of dots: "neighbour" dots are not allowed
-//      if (Run = StartPos) or (DotPos >= 0) and (DotPos = Run - 1) then
-//        break
-//      else
-//        DotPos := Run;
+      AtPos := Run
+    else if fLine[Run] = '.' then
+      // reject array of dots: "neighbour" dots are not allowed
+      if (Run = StartPos) or (DotPos >= 0) and (DotPos = Run - 1) then
+        break
+      else
+        DotPos := Run;
     Inc(Run);
   end;
 
@@ -1269,11 +1267,11 @@ begin
   DotPos := -1;
   while IsURIChar(fLine[Run]) do
   begin
-//    if fLine[Run] = '.' then
-//      // reject array of dots: "neighbour" dots are not allowed
-//      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
-//        break
-//      else
+    if fLine[Run] = '.' then
+      // reject array of dots: "neighbour" dots are not allowed
+      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
+        break
+      else
         DotPos := Run;
     inc(Run);
   end;
@@ -1302,25 +1300,23 @@ begin
   SecondDotPos := -1;
   while IsURIChar(fLine[Run]) do
   begin
-//    if fLine[Run] = '.' then
-//      // reject array of dots: "neighbour" dots are not allowed
-//      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
-//        break
-//      else
-//      begin
-//        DotPos := Run;
-//        if SecondDotPos = -2 then SecondDotPos := DotPos;
-//        if SecondDotPos = -1 then SecondDotPos := -2;
-//      end;
+    if fLine[Run] = '.' then
+      // reject array of dots: "neighbour" dots are not allowed
+      if (DotPos >= 0) and (DotPos = Run - 1) and not IsRelativePath then
+        break
+      else
+      begin
+        DotPos := Run;
+        if SecondDotPos = -2 then SecondDotPos := DotPos;
+        if SecondDotPos = -1 then SecondDotPos := -2;
+      end;
     inc(Run);
   end;
 
   while (Run > WWWEndPos) and IsNeverAtEnd(fLine[Run - 1]) do
     dec(Run);
 
-//  Result := (Run > WWWEndPos) and (fLine[WWWEndPos] = '.') and
-//            (SecondDotPos > WWWEndPos + 1) and (SecondDotPos < Run);
-  Result := (Run > WWWEndPos) and
+  Result := (Run > WWWEndPos) and (fLine[WWWEndPos] = '.') and
             (SecondDotPos > WWWEndPos + 1) and (SecondDotPos < Run);
 end;
 

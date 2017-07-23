@@ -1958,7 +1958,7 @@ begin
     if DisplayType = ctCode then
     begin
       (Owner as TSynBaseCompletionProposal).FWidth := Width;
-      (Owner as TSynBaseCompletionProposal).FNbLinesInWindow := FLinesInWindow;
+      //(Owner as TSynBaseCompletionProposal).FNbLinesInWindow := FLinesInWindow;
     end;
   end;
   //GBN 28/08/2002

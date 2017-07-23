@@ -158,7 +158,6 @@
 #include <ComponentDesigner.hpp>	// Pascal unit
 #include <VCLEditors.hpp>	// Pascal unit
 #include <Vcl.Grids.hpp>	// Pascal unit
-#include <SynColors.hpp>	// Pascal unit
 
 //-- user supplied -----------------------------------------------------------
 

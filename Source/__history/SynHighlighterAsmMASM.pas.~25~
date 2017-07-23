@@ -174,7 +174,7 @@ type
     procedure SaveFile(fName: string);
     procedure LoadFile(fName: string);
     procedure AssignColors(memo: TSynMemo);
-//    function IsIdentChar(AChar: WideChar): Boolean; override;
+    function IsIdentChar(AChar: WideChar): Boolean; override;
   published
     property CommentAttri: TSynHighlighterAttributes read fCommentAttri write fCommentAttri;
     property IdentifierAttri: TSynHighlighterAttributes read fIdentifierAttri write fIdentifierAttri;
@@ -915,10 +915,10 @@ begin
   Result := SYNS_FriendlyLangMASM;
 end;
 
-//function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
-//begin
-//  Result := SynIsCharAlphaNumeric(AChar);
-//end;
+function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
+begin
+  Result := SynIsCharAlphaNumeric(AChar);
+end;
 
 procedure TSynAsmMASMSyn.SetAlreadyVisitedURIFunc(Value: TAlreadyVisitedURIFunc);
 begin

@@ -116,6 +116,9 @@
 #include <SynEditHighlighterOptions.hpp>	// Pascal unit
 #include <SynHighlighterJSON.hpp>	// Pascal unit
 #include <SynHighlighterRexx.hpp>	// Pascal unit
+#include <SynHighlighterAsmMASM.hpp>	// Pascal unit
+#include <SynColors.hpp>	// Pascal unit
+#include <JsonDataObjects.hpp>	// Pascal unit
 #include <Winapi.Windows.hpp>	// Pascal unit
 #include <System.Internal.ExcUtils.hpp>	// Pascal unit
 #include <System.SysUtils.hpp>	// Pascal unit
