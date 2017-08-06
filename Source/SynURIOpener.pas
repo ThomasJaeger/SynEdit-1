@@ -250,31 +250,31 @@ procedure TSynURIOpener.SetEditor(const Value: TCustomSynEdit);
 begin
   if Editor <> Value then
   begin
-    if not(csDesigning in ComponentState) and Assigned(FEditor) then
-    begin
-      with FEditor do
-      begin
-        RemoveKeyDownHandler(NewKeyDown);
-        RemoveKeyUpHandler(NewKeyUp);
-        RemoveMouseCursorHandler(NewMouseCursor);
-        RemoveMouseDownHandler(NewMouseDown);
-        RemoveMouseUpHandler(NewMouseUp);
-      end;
-    end;
+//    if not(csDesigning in ComponentState) and Assigned(FEditor) then
+//    begin
+//      with FEditor do
+//      begin
+//        RemoveKeyDownHandler(NewKeyDown);
+//        RemoveKeyUpHandler(NewKeyUp);
+//        RemoveMouseCursorHandler(NewMouseCursor);
+//        RemoveMouseDownHandler(NewMouseDown);
+//        RemoveMouseUpHandler(NewMouseUp);
+//      end;
+//    end;
 
     FEditor := Value;
 
-    if not(csDesigning in ComponentState) and Assigned(FEditor) then
-    begin
-      with FEditor do
-      begin
-        AddKeyDownHandler(NewKeyDown);
-        AddKeyUpHandler(NewKeyUp);
-        AddMouseCursorHandler(NewMouseCursor);
-        AddMouseDownHandler(NewMouseDown);
-        AddMouseUpHandler(NewMouseUp);
-      end;
-    end;
+//    if not(csDesigning in ComponentState) and Assigned(FEditor) then
+//    begin
+//      with FEditor do
+//      begin
+//        AddKeyDownHandler(NewKeyDown);
+//        AddKeyUpHandler(NewKeyUp);
+//        AddMouseCursorHandler(NewMouseCursor);
+//        AddMouseDownHandler(NewMouseDown);
+//        AddMouseUpHandler(NewMouseUp);
+//      end;
+//    end;
   end;
 end;
 

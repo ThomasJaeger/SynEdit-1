@@ -1807,7 +1807,8 @@ begin
   end;
 
   inherited;
-  fKbdHandler.ExecuteKeyUp(Self, Key, Shift);
+  if fKbdHandler <> nil then
+    fKbdHandler.ExecuteKeyUp(Self, Key, Shift);
 end;
 
 procedure TCustomSynEdit.KeyDown(var Key: Word; Shift: TShiftState);
@@ -1817,7 +1818,8 @@ var
   Cmd: TSynEditorCommand;
 begin
   inherited;
-  fKbdHandler.ExecuteKeyDown(Self, Key, Shift);
+  if fKbdHandler <> nil then
+    fKbdHandler.ExecuteKeyDown(Self, Key, Shift);
 
   Data := nil;
   C := #0;
@@ -1886,7 +1888,8 @@ begin
   // don't fire the event if key is to be ignored
   if not (sfIgnoreNextChar in fStateFlags) then
   begin
-    fKbdHandler.ExecuteKeyPress(Self, Key);
+    if fKbdHandler <> nil then
+      fKbdHandler.ExecuteKeyPress(Self, Key);
     CommandProcessor(ecChar, Key, nil);
   end
   else
@@ -1981,7 +1984,8 @@ begin
 
   if (Button = mbLeft) and (ssDouble in Shift) then Exit;
 
-  fKbdHandler.ExecuteMouseDown(Self, Button, Shift, X, Y);
+  if fKbdHandler <> nil then
+    fKbdHandler.ExecuteMouseDown(Self, Button, Shift, X, Y);
 
   if (Button in [mbLeft, mbRight]) then
   begin
@@ -2139,7 +2143,8 @@ procedure TCustomSynEdit.MouseUp(Button: TMouseButton; Shift: TShiftState;
   X, Y: Integer);
 begin
   inherited MouseUp(Button, Shift, X, Y);
-  fKbdHandler.ExecuteMouseUp(Self, Button, Shift, X, Y);
+  if fKbdHandler <> nil then
+    fKbdHandler.ExecuteMouseUp(Self, Button, Shift, X, Y);
 
   fScrollTimer.Enabled := False;
   if (Button = mbRight) and (Shift = [ssRight]) and Assigned(PopupMenu) then
@@ -7896,7 +7901,8 @@ begin
       iNewCursor := Cursor;
     if Assigned(OnMouseCursor) then
       OnMouseCursor(Self, ptLineCol, iNewCursor);
-    fKbdHandler.ExecuteMouseCursor(Self, ptLineCol, iNewCursor);
+    if fKbdHandler <> nil then
+      fKbdHandler.ExecuteMouseCursor(Self, ptLineCol, iNewCursor);
     SetCursor(Screen.Cursors[iNewCursor]);
   end;
 end;
@@ -9626,32 +9632,38 @@ end;
 
 procedure TCustomSynEdit.AddKeyUpHandler(aHandler: TKeyEvent);
 begin
-  fKbdHandler.AddKeyUpHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.AddKeyUpHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.RemoveKeyUpHandler(aHandler: TKeyEvent);
 begin
-  fKbdHandler.RemoveKeyUpHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.RemoveKeyUpHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.AddKeyDownHandler(aHandler: TKeyEvent);
 begin
-  fKbdHandler.AddKeyDownHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.AddKeyDownHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.RemoveKeyDownHandler(aHandler: TKeyEvent);
 begin
-  fKbdHandler.RemoveKeyDownHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.RemoveKeyDownHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.AddKeyPressHandler(aHandler: TKeyPressWEvent);
 begin
-  fKbdHandler.AddKeyPressHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.AddKeyPressHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.RemoveKeyPressHandler(aHandler: TKeyPressWEvent);
 begin
-  fKbdHandler.RemoveKeyPressHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.RemoveKeyPressHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.AddFocusControl(aControl: TWinControl);
@@ -10004,32 +10016,38 @@ end;
 
 procedure TCustomSynEdit.AddMouseDownHandler(aHandler: TMouseEvent);
 begin
-  fKbdHandler.AddMouseDownHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.AddMouseDownHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.RemoveMouseDownHandler(aHandler: TMouseEvent);
 begin
-  fKbdHandler.RemoveMouseDownHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.RemoveMouseDownHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.AddMouseUpHandler(aHandler: TMouseEvent);
 begin
-  fKbdHandler.AddMouseUpHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.AddMouseUpHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.RemoveMouseUpHandler(aHandler: TMouseEvent);
 begin
-  fKbdHandler.RemoveMouseUpHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.RemoveMouseUpHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.AddMouseCursorHandler(aHandler: TMouseCursorEvent);
 begin
-  fKbdHandler.AddMouseCursorHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.AddMouseCursorHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.RemoveMouseCursorHandler(aHandler: TMouseCursorEvent);
 begin
-  fKbdHandler.RemoveMouseCursorHandler(aHandler);
+  if fKbdHandler <> nil then
+    fKbdHandler.RemoveMouseCursorHandler(aHandler);
 end;
 
 procedure TCustomSynEdit.DoSearchFindFirstExecute(Action: TSearchFindFirst);
