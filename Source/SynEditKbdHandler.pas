@@ -129,32 +129,38 @@ implementation
 
 procedure TSynEditKbdHandler.AddKeyDownHandler(aHandler: TKeyEvent);
 begin
-  fKeyDownChain.Add(TMethod(aHandler));
+  if fKeyDownChain <> nil then
+    fKeyDownChain.Add(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.AddKeyUpHandler(aHandler: TKeyEvent);
 begin
-  fKeyUpChain.Add(TMethod(aHandler));
+  if fKeyUpChain <> nil then
+    fKeyUpChain.Add(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.AddKeyPressHandler(aHandler: TKeyPressWEvent);
 begin
-  fKeyPressChain.Add(TMethod(aHandler));
+  if fKeyPressChain <> nil then
+    fKeyPressChain.Add(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.AddMouseDownHandler(aHandler: TMouseEvent);
 begin
-  fMouseDownChain.Add(TMethod(aHandler));
+  if fMouseDownChain <> nil then
+    fMouseDownChain.Add(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.AddMouseUpHandler(aHandler: TMouseEvent);
 begin
-  fMouseUpChain.Add(TMethod(aHandler));
+  if fMouseUpChain <> nil then
+    fMouseUpChain.Add(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.AddMouseCursorHandler(aHandler: TMouseCursorEvent);
 begin
-  fMouseCursorChain.Add(TMethod(aHandler));
+  if fMouseCursorChain <> nil then
+    fMouseCursorChain.Add(TMethod(aHandler));
 end;
 
 constructor TSynEditKbdHandler.Create;
@@ -315,32 +321,38 @@ end;
 
 procedure TSynEditKbdHandler.RemoveKeyDownHandler(aHandler: TKeyEvent);
 begin
-  fKeyDownChain.Remove(TMethod(aHandler));
+  if fKeyDownChain <> nil then
+    fKeyDownChain.Remove(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.RemoveKeyUpHandler(aHandler: TKeyEvent);
 begin
-  fKeyUpChain.Remove(TMethod(aHandler));
+  if fKeyUpChain <> nil then
+    fKeyUpChain.Remove(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.RemoveKeyPressHandler(aHandler: TKeyPressWEvent);
 begin
-  fKeyPressChain.Remove(TMethod(aHandler));
+  if fKeyPressChain <> nil then
+    fKeyPressChain.Remove(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.RemoveMouseDownHandler(aHandler: TMouseEvent);
 begin
-  fMouseDownChain.Remove(TMethod(aHandler));
+  if fMouseDownChain <> nil then
+    fMouseDownChain.Remove(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.RemoveMouseUpHandler(aHandler: TMouseEvent);
 begin
-  fMouseUpChain.Remove(TMethod(aHandler));
+  if fMouseUpChain <> nil then
+    fMouseUpChain.Remove(TMethod(aHandler));
 end;
 
 procedure TSynEditKbdHandler.RemoveMouseCursorHandler(aHandler: TMouseCursorEvent);
 begin
-  fMouseCursorChain.Remove(TMethod(aHandler));
+  if fMouseCursorChain <> nil then
+    fMouseCursorChain.Remove(TMethod(aHandler));
 end;
 
 { TMethodList }
