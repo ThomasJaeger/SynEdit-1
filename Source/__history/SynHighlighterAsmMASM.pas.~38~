@@ -128,8 +128,8 @@ type
     procedure SetURIAttri(const Value: TSynHighlighterAttributes);
     procedure SetVisitedURIAttri(const Value: TSynHighlighterAttributes);
 
-//    function HashKey(Str: PWideChar): Cardinal;
-    function HashKey(Str: PWideChar): Integer;
+    function HashKey(Str: PWideChar): Cardinal;
+//    function HashKey(Str: PWideChar): Integer;
     procedure CommentProc;
     procedure CRProc;
     procedure GreaterProc;
@@ -155,7 +155,7 @@ type
   protected
     function GetSampleSource: UnicodeString; override;
     function IsFilterStored: Boolean; override;
-    function IsCurrentToken(const Token: string): Boolean; override;
+//    function IsCurrentToken(const Token: string): Boolean; override;
     procedure SetAlreadyVisitedURIFunc(Value: TAlreadyVisitedURIFunc);
   public
     class function GetLanguageName: string; override;
@@ -251,7 +251,7 @@ const
 //                              'size,sizeof,this,type,width,xor';
 
   Directives: UnicodeString =
-    '=,.386,.386p,.387,.486,.486p,.586,.586p,.686,.686p,alias,align,.allocstack,'+
+    '=,.186,.286,.386,.386p,.387,.486,.486p,.586,.586p,.686,.686p,alias,align,.allocstack,'+
     '.alpha,assume,.break,byte,catstr,.code,comm,comment,.const,.continue,.cref,'+
     '.data,.data?,db,dd,df,.dosseg,dosseg,dq,dt,dw,dword,echo,.else,else,elseif,'+
   	'.elseif,'+
@@ -355,28 +355,28 @@ begin
   fIdentFuncTable[9] := FuncWeb;
 end;
 
-function TSynAsmMASMSyn.IsCurrentToken(const Token: string): Boolean;
-var
-  I: Integer;
-  Temp: PWideChar;
-begin
-  Temp := fToIdent;
-  if Length(Token) = fStringLen then
-  begin
-    Result := True;
-    for i := 1 to fStringLen do
-    begin
-      if Temp^ <> Token[i] then
-      begin
-        Result := False;
-        break;
-      end;
-      inc(Temp);
-    end;
-  end
-  else
-    Result := False;
-end;
+//function TSynAsmMASMSyn.IsCurrentToken(const Token: string): Boolean;
+//var
+//  I: Integer;
+//  Temp: PWideChar;
+//begin
+//  Temp := fToIdent;
+//  if Length(Token) = fStringLen then
+//  begin
+//    Result := True;
+//    for i := 1 to fStringLen do
+//    begin
+//      if Temp^ <> Token[i] then
+//      begin
+//        Result := False;
+//        break;
+//      end;
+//      inc(Temp);
+//    end;
+//  end
+//  else
+//    Result := False;
+//end;
 
 function TSynAsmMASMSyn.AltFunc(Key: Integer): TtkTokenKind;
 begin
@@ -423,49 +423,49 @@ begin
   fOperatorKeywords[HashValue] := TSynHashEntry.Create(AKeyword, AKind);
 end;
 
-////{$Q-}
-//function TSynAsmMASMSyn.HashKey(Str: PWideChar): Cardinal;
-//begin
-//  Result := 0;
-//  while IsIdentChar(Str^) do
-//  begin
-//    Result := Result * 197 + Ord(Str^) * 14;
-//    inc(Str);
-//  end;
-//  Result := Result mod 4561;
-//  fStringLen := Str - fToIdent;
-//end;
-////{$Q+}
-
-function TSynAsmMASMSyn.HashKey(Str: PWideChar): Integer;
+//{$Q-}
+function TSynAsmMASMSyn.HashKey(Str: PWideChar): Cardinal;
 begin
   Result := 0;
-  while CharInSet(Str^, ['A'..'Z', 'a'..'z']) do
+  while IsIdentChar(Str^) do
   begin
-    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+    Result := Result * 197 + Ord(Str^) * 14;
     inc(Str);
   end;
-
-  if Str^ = ':' then
-  begin
-    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
-    inc(Str);
-  end;
-
-  if Str^ = '/' then
-  begin
-    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
-    inc(Str);
-  end;
-
-  if Str^ = '/' then
-  begin
-    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
-    inc(Str);
-  end;
-
+  Result := Result mod 4561;
   fStringLen := Str - fToIdent;
 end;
+//{$Q+}
+
+//function TSynAsmMASMSyn.HashKey(Str: PWideChar): Integer;
+//begin
+//  Result := 0;
+//  while CharInSet(Str^, ['A'..'Z', 'a'..'z']) do
+//  begin
+//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+//    inc(Str);
+//  end;
+//
+//  if Str^ = ':' then
+//  begin
+//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+//    inc(Str);
+//  end;
+//
+//  if Str^ = '/' then
+//  begin
+//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+//    inc(Str);
+//  end;
+//
+//  if Str^ = '/' then
+//  begin
+//    Result := (Result * 3 + Ord(Str^) div 9) mod 16;
+//    inc(Str);
+//  end;
+//
+//  fStringLen := Str - fToIdent;
+//end;
 
 function TSynAsmMASMSyn.IdentKind(MayBe: PWideChar): TtkTokenKind;
 var
@@ -546,6 +546,8 @@ begin
 end;
 
 constructor TSynAsmMASMSyn.Create(AOwner: TComponent);
+var
+  dataFolder: string;
 begin
   inherited Create(AOwner);
 
@@ -611,8 +613,9 @@ begin
   EnumerateKeywords(Ord(tkDirectives), Directives, IsIdentChar, DoAddDirectivesKeyword);
   EnumerateKeywords(Ord(tkRegister), Registers, IsIdentChar, DoAddRegisterKeyword);
 
-  if FileExists('WinAPIInsertList.txt') then
-    FApis := TFile.ReadAllText('WinAPIInsertList.txt');
+  dataFolder := '.'+PathDelim+'data'+PathDelim;
+  if FileExists(dataFolder+'WinAPIInsertList.txt') then
+    FApis := TFile.ReadAllText(dataFolder+'WinAPIInsertList.txt');
   EnumerateKeywords(Ord(tkApi), FApis, IsIdentChar, DoAddApiKeyword);
 
   EnumerateKeywords(Ord(tkOperator), Operators, IsIdentChar, DoAddOperatorKeyword);
@@ -645,10 +648,14 @@ end;
 
 procedure TSynAsmMASMSyn.CommentProc;
 begin
-  fTokenID := tkComment;
-  repeat
-    Inc(Run);
-  until IsLineEnd(Run);
+  if IsValidEmailAddress then
+    fTokenID := tkMailtoLink
+  else begin
+    fTokenID := tkComment;
+    repeat
+      Inc(Run);
+    until IsLineEnd(Run);
+  end;
 end;
 
 procedure TSynAsmMASMSyn.CRProc;
@@ -666,31 +673,30 @@ begin
 end;
 
 procedure TSynAsmMASMSyn.IdentProc;
-var
-  Key: Integer;
 begin
-//  fTokenID := IdentKind((fLine + Run));
-//  inc(Run, fStringLen);
-//  while IsIdentChar(fLine[Run]) do inc(Run);
-
   if IsValidEmailAddress then
     fTokenID := tkMailtoLink
-  else
-  begin
-    fToIdent := fLine + Run;
-    Key := HashKey(fToIdent);
+  else begin
+    fTokenID := IdentKind((fLine + Run));
     inc(Run, fStringLen);
-
-    if Key <= 15 then
-      fTokenID := fIdentFuncTable[Key](Key)
-    else
-    begin
-      //fTokenID := tkUnknown;
-      fTokenID := IdentKind((fLine + Run));
-      inc(Run, fStringLen);
-      while IsIdentChar(fLine[Run]) do inc(Run);
-    end;
+    while IsIdentChar(fLine[Run]) do inc(Run);
   end;
+
+//  if IsValidEmailAddress then
+//    fTokenID := tkMailtoLink
+//  else
+//  begin
+//    fToIdent := fLine + Run;
+//    Key := HashKey(fToIdent);
+//    inc(Run, fStringLen);
+//
+//    if Key <= 15 then
+//      fTokenID := fIdentFuncTable[Key](Key)
+//    else
+//    begin
+//      fTokenID := tkUnknown;
+//    end;
+//  end;
 end;
 
 procedure TSynAsmMASMSyn.LFProc;
@@ -1225,7 +1231,7 @@ end;
 function TSynAsmMASMSyn.IsEMailAddressChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-    '.', '_', '-', '@':
+    '.', '_', '-', '@', ';':
       Result := True;
     else
       Result := IsAlphaNum(AChar);

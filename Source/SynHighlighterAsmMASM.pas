@@ -251,7 +251,7 @@ const
 //                              'size,sizeof,this,type,width,xor';
 
   Directives: UnicodeString =
-    '=,.386,.386p,.387,.486,.486p,.586,.586p,.686,.686p,alias,align,.allocstack,'+
+    '=,.8086,.8087,.186,.286,.286P,.386,.386p,.387,.486,.486p,.586,.586p,.686,.686p,alias,align,.allocstack,'+
     '.alpha,assume,.break,byte,catstr,.code,comm,comment,.const,.continue,.cref,'+
     '.data,.data?,db,dd,df,.dosseg,dosseg,dq,dt,dw,dword,echo,.else,else,elseif,'+
   	'.elseif,'+
@@ -546,6 +546,8 @@ begin
 end;
 
 constructor TSynAsmMASMSyn.Create(AOwner: TComponent);
+var
+  dataFolder: string;
 begin
   inherited Create(AOwner);
 
@@ -611,8 +613,9 @@ begin
   EnumerateKeywords(Ord(tkDirectives), Directives, IsIdentChar, DoAddDirectivesKeyword);
   EnumerateKeywords(Ord(tkRegister), Registers, IsIdentChar, DoAddRegisterKeyword);
 
-  if FileExists('WinAPIInsertList.txt') then
-    FApis := TFile.ReadAllText('WinAPIInsertList.txt');
+  dataFolder := '.'+PathDelim+'data'+PathDelim;
+  if FileExists(dataFolder+'WinAPIInsertList.txt') then
+    FApis := TFile.ReadAllText(dataFolder+'WinAPIInsertList.txt');
   EnumerateKeywords(Ord(tkApi), FApis, IsIdentChar, DoAddApiKeyword);
 
   EnumerateKeywords(Ord(tkOperator), Operators, IsIdentChar, DoAddOperatorKeyword);

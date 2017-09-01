@@ -96,7 +96,6 @@ type
     FSynColors: TSynColors;
     FApis: UnicodeString;
 
-    fMayBeProtocol: PWideChar;
     fIdentFuncTable: array[0..15] of TIdentFuncTableFunc;
     fURIAttri: TSynHighlighterAttributes;
     fVisitedURIAttri: TSynHighlighterAttributes;
@@ -361,7 +360,7 @@ end;
 //  I: Integer;
 //  Temp: PWideChar;
 //begin
-//  Temp := fMayBeProtocol;
+//  Temp := fToIdent;
 //  if Length(Token) = fStringLen then
 //  begin
 //    Result := True;
@@ -465,7 +464,7 @@ end;
 //    inc(Str);
 //  end;
 //
-//  fStringLen := Str - fMayBeProtocol;
+//  fStringLen := Str - fToIdent;
 //end;
 
 function TSynAsmMASMSyn.IdentKind(MayBe: PWideChar): TtkTokenKind;
@@ -646,10 +645,14 @@ end;
 
 procedure TSynAsmMASMSyn.CommentProc;
 begin
-  fTokenID := tkComment;
-  repeat
-    Inc(Run);
-  until IsLineEnd(Run);
+  if IsValidEmailAddress then
+    fTokenID := tkMailtoLink
+  else begin
+    fTokenID := tkComment;
+    repeat
+      Inc(Run);
+    until IsLineEnd(Run);
+  end;
 end;
 
 procedure TSynAsmMASMSyn.CRProc;
@@ -667,32 +670,30 @@ begin
 end;
 
 procedure TSynAsmMASMSyn.IdentProc;
-var
-  Key: Integer;
 begin
-//  fTokenID := IdentKind((fLine + Run));
-//  inc(Run, fStringLen);
-//  while IsIdentChar(fLine[Run]) do inc(Run);
-
-
   if IsValidEmailAddress then
     fTokenID := tkMailtoLink
-  else
-  begin
-    fMayBeProtocol := fLine + Run;
-    Key := HashKey(fMayBeProtocol);
+  else begin
+    fTokenID := IdentKind((fLine + Run));
     inc(Run, fStringLen);
-
-    if Key <= 15 then
-      fTokenID := fIdentFuncTable[Key](Key)
-    else
-    begin
-      //fTokenID := tkUnknown;
-      fTokenID := IdentKind((fLine + Run));
-      inc(Run, fStringLen);
-      while IsIdentChar(fLine[Run]) do inc(Run);
-    end;
+    while IsIdentChar(fLine[Run]) do inc(Run);
   end;
+
+//  if IsValidEmailAddress then
+//    fTokenID := tkMailtoLink
+//  else
+//  begin
+//    fToIdent := fLine + Run;
+//    Key := HashKey(fToIdent);
+//    inc(Run, fStringLen);
+//
+//    if Key <= 15 then
+//      fTokenID := fIdentFuncTable[Key](Key)
+//    else
+//    begin
+//      fTokenID := tkUnknown;
+//    end;
+//  end;
 end;
 
 procedure TSynAsmMASMSyn.LFProc;
@@ -1084,8 +1085,8 @@ begin
     fTokenID := tkMailtoLink
   else
   begin
-    fMayBeProtocol := fLine + Run;
-    Key := HashKey(fMayBeProtocol);
+    fToIdent := fLine + Run;
+    Key := HashKey(fToIdent);
     inc(Run, fStringLen);
 
     if Key <= 15 then
@@ -1227,7 +1228,7 @@ end;
 function TSynAsmMASMSyn.IsEMailAddressChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-    '.', '_', '-', '@':
+    '.', '_', '-', '@', ';':
       Result := True;
     else
       Result := IsAlphaNum(AChar);

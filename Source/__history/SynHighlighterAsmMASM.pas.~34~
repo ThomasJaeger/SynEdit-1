@@ -96,7 +96,6 @@ type
     FSynColors: TSynColors;
     FApis: UnicodeString;
 
-    fMayBeProtocol: PWideChar;
     fIdentFuncTable: array[0..15] of TIdentFuncTableFunc;
     fURIAttri: TSynHighlighterAttributes;
     fVisitedURIAttri: TSynHighlighterAttributes;
@@ -174,7 +173,7 @@ type
     procedure SaveFile(fName: string);
     procedure LoadFile(fName: string);
     procedure AssignColors(memo: TSynMemo);
-    function IsIdentChar(AChar: WideChar): Boolean; override;
+//    function IsIdentChar(AChar: WideChar): Boolean; override;
   published
     property CommentAttri: TSynHighlighterAttributes read fCommentAttri write fCommentAttri;
     property IdentifierAttri: TSynHighlighterAttributes read fIdentifierAttri write fIdentifierAttri;
@@ -361,7 +360,7 @@ end;
 //  I: Integer;
 //  Temp: PWideChar;
 //begin
-//  Temp := fMayBeProtocol;
+//  Temp := fToIdent;
 //  if Length(Token) = fStringLen then
 //  begin
 //    Result := True;
@@ -465,7 +464,7 @@ end;
 //    inc(Str);
 //  end;
 //
-//  fStringLen := Str - fMayBeProtocol;
+//  fStringLen := Str - fToIdent;
 //end;
 
 function TSynAsmMASMSyn.IdentKind(MayBe: PWideChar): TtkTokenKind;
@@ -547,6 +546,8 @@ begin
 end;
 
 constructor TSynAsmMASMSyn.Create(AOwner: TComponent);
+var
+  dataFolder: string;
 begin
   inherited Create(AOwner);
 
@@ -612,7 +613,9 @@ begin
   EnumerateKeywords(Ord(tkDirectives), Directives, IsIdentChar, DoAddDirectivesKeyword);
   EnumerateKeywords(Ord(tkRegister), Registers, IsIdentChar, DoAddRegisterKeyword);
 
-  if FileExists('WinAPIInsertList.txt') then
+  //dataFolder := ExtractFilePath(Application.ExeName)+'data'+PathDelim;
+  dataFolder := '..'+PathDelim+'data'+PathDelim;
+  if FileExists(dataFolder+'WinAPIInsertList.txt') then
     FApis := TFile.ReadAllText('WinAPIInsertList.txt');
   EnumerateKeywords(Ord(tkApi), FApis, IsIdentChar, DoAddApiKeyword);
 
@@ -646,10 +649,14 @@ end;
 
 procedure TSynAsmMASMSyn.CommentProc;
 begin
-  fTokenID := tkComment;
-  repeat
-    Inc(Run);
-  until IsLineEnd(Run);
+  if IsValidEmailAddress then
+    fTokenID := tkMailtoLink
+  else begin
+    fTokenID := tkComment;
+    repeat
+      Inc(Run);
+    until IsLineEnd(Run);
+  end;
 end;
 
 procedure TSynAsmMASMSyn.CRProc;
@@ -668,9 +675,29 @@ end;
 
 procedure TSynAsmMASMSyn.IdentProc;
 begin
-  fTokenID := IdentKind((fLine + Run));
-  inc(Run, fStringLen);
-  while IsIdentChar(fLine[Run]) do inc(Run);
+  if IsValidEmailAddress then
+    fTokenID := tkMailtoLink
+  else begin
+    fTokenID := IdentKind((fLine + Run));
+    inc(Run, fStringLen);
+    while IsIdentChar(fLine[Run]) do inc(Run);
+  end;
+
+//  if IsValidEmailAddress then
+//    fTokenID := tkMailtoLink
+//  else
+//  begin
+//    fToIdent := fLine + Run;
+//    Key := HashKey(fToIdent);
+//    inc(Run, fStringLen);
+//
+//    if Key <= 15 then
+//      fTokenID := fIdentFuncTable[Key](Key)
+//    else
+//    begin
+//      fTokenID := tkUnknown;
+//    end;
+//  end;
 end;
 
 procedure TSynAsmMASMSyn.LFProc;
@@ -793,7 +820,7 @@ begin
 //    '\': IncludeProc;
     //'A'..'Z', 'a'..'z', '_': IdentProc;
     'A'..'Z', 'a'..'z', '_', '.', '?', '[', ']': IdentProc;   // THJ
-    //'A'..'Z', 'a'..'z': ProtocolProc;   // THJ
+//    'A'..'Z', 'a'..'z': ProtocolProc;   // THJ
     '0'..'9': NumberProc;
     #1..#9, #11, #12, #14..#32: SpaceProc;
     ';': CommentProc;
@@ -915,10 +942,10 @@ begin
   Result := SYNS_FriendlyLangMASM;
 end;
 
-function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
-begin
-  Result := SynIsCharAlphaNumeric(AChar);
-end;
+//function TSynAsmMASMSyn.IsIdentChar(AChar: WideChar): Boolean;
+//begin
+//  Result := SynIsCharAlphaNumeric(AChar);
+//end;
 
 procedure TSynAsmMASMSyn.SetAlreadyVisitedURIFunc(Value: TAlreadyVisitedURIFunc);
 begin
@@ -1062,8 +1089,8 @@ begin
     fTokenID := tkMailtoLink
   else
   begin
-    fMayBeProtocol := fLine + Run;
-    Key := HashKey(fMayBeProtocol);
+    fToIdent := fLine + Run;
+    Key := HashKey(fToIdent);
     inc(Run, fStringLen);
 
     if Key <= 15 then
@@ -1169,8 +1196,7 @@ end;
 function TSynAsmMASMSyn.IsMark(AChar: WideChar): Boolean;
 begin
   case AChar of
-//    '-', '_', '.', '!', '~', '*', '''', '(' , ')':
-    '-', '_', '!', '~', '*', '''', '(' , ')':   // THJ
+    '-', '_', '.', '!', '~', '*', '''', '(' , ')':
       Result := True;
     else
       Result := False;
@@ -1180,8 +1206,7 @@ end;
 function TSynAsmMASMSyn.IsReserved(AChar: WideChar): Boolean;
 begin
   case AChar of
-//    ';', '/', '?', ':', '@', '&', '=', '+', '$', ',', '%', '#':
-    ';', '/', ':', '@', '&', '=', '+', '$', ',', '%', '#':  // THJ
+    ';', '/', '?', ':', '@', '&', '=', '+', '$', ',', '%', '#':
       Result := True;
     else
       Result := False;
@@ -1207,7 +1232,7 @@ end;
 function TSynAsmMASMSyn.IsEMailAddressChar(AChar: WideChar): Boolean;
 begin
   case AChar of
-    '.', '_', '-', '@':
+    '.', '_', '-', '@', ';':
       Result := True;
     else
       Result := IsAlphaNum(AChar);
